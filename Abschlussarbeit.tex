@@ -1,0 +1,22 @@
+\def\texpath{tex/}
+\def\imgpath{images/}
+
+\documentclass[a4paper, 10pt, pdftex, twoside=false, numbers=noenddot, fleqn]{scrbook}
+
+	\input{\texpath header}
+
+	\graphicspath{{\imgpath}}
+	\addbibresource{bib/articles.bib}
+
+	
+\begin{document}
+
+	\input{\texpath titlepage}
+	
+	\tableofcontents
+
+	\include{chapters/01_einleitung}
+	
+	\printbibliography[heading=bibintoc]
+	
+\end{document}

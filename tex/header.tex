@@ -1,0 +1,117 @@
+%------------------------------------------------------------------------------
+% ----- Pakete: Encoding und Sprachanpassung 
+%------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}				% Encoding der Keyboard-Eingabe
+\usepackage[T1]{fontenc} 				% Schriftdarstellung
+\usepackage[ngerman]{babel} 			% Silbentrennung, Datum, Bezeichnungen
+\usepackage[german=quotes]{csquotes} 	% Anführungszeichen
+
+%------------------------------------------------------------------------------
+% ----- Pakete: Formelsatz und Einheiten
+%------------------------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{siunitx}
+	\sisetup{exponent-product=\cdot,
+			 output-decimal-marker={,},
+			 separate-uncertainty=true,
+			 tight-spacing=true,
+			 per-mode=fraction,
+			 range-phrase=--,
+			 range-units=single,
+			 load-configurations = abbreviations}
+	\DeclareSIUnit[]\year{y}
+	\DeclareSIUnit{\bit}{bit}
+
+%------------------------------------------------------------------------------
+% ----- Pakete: Schriftarten, Symbole
+%------------------------------------------------------------------------------
+\usepackage{marvosym, wasysym, pifont}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage{eurosym}
+	\DeclareSIUnit{\EUR}{\text{\euro}}
+	
+%------------------------------------------------------------------------------
+% ----- Pakete: Tabellen
+%------------------------------------------------------------------------------
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+%------------------------------------------------------------------------------
+% ------ Pakete: Abbildungen, Bilder, Zeichnungen
+%------------------------------------------------------------------------------
+\usepackage{xcolor}
+	\definecolor{BOred}{HTML}{E2001A}
+	\definecolor{BOgreen}{HTML}{ADD009}
+	\definecolor{BOblue}{HTML}{005680}
+	\definecolor{BOgray}{HTML}{7b7c7e}
+	\definecolor{BOdarkgreen}{HTML}{0c6d31}
+\usepackage[innercaption]{sidecap}
+	\sidecaptionvpos{figure}{t}
+\usepackage{caption}
+	\captionsetup[table]{labelfont=bf, format=plain, labelsep=quad, singlelinecheck=false, textfont=up, font=small}%
+	\captionsetup[figure]{labelfont=bf, format=plain, labelsep=quad, singlelinecheck=false, textfont=up, font=small}%
+
+%------------------------------------------------------------------------------
+% ------ Pakete: Links, URLs
+%------------------------------------------------------------------------------
+\usepackage{url}
+	\addto\captionsngerman{\def\figurename{Abb.}}
+	\addto\extrasngerman{\def\figureautorefname{Abb.}}
+	\addto\captionsngerman{\def\tablename{Tab.}}
+	\addto\extrasngerman{\def\tableautorefname{Tab.}}
+\usepackage[english, breaklinks]{hyperref}
+	\hypersetup{colorlinks=false, linkcolor=darkblue, pdfborder={0 0 0}, linktoc=all}
+	\urlstyle{same}	
+
+%------------------------------------------------------------------------------
+% ------ Pakete: Code
+%------------------------------------------------------------------------------
+%\usepackage{minted, lineno}
+
+%------------------------------------------------------------------------------
+% ------ Pakete: Dummy-Text
+%------------------------------------------------------------------------------
+\usepackage{lipsum}
+
+%------------------------------------------------------------------------------
+% ----- Pakete: Verzeichnisse, ToDos
+%------------------------------------------------------------------------------
+\usepackage{titletoc}
+\usepackage[backgroundcolor=red!50, linecolor=red!50, bordercolor=white]{todonotes}
+
+%------------------------------------------------------------------------------
+% ----- Pakete: Aufzählungen 
+%------------------------------------------------------------------------------
+\usepackage{enumitem}
+	\renewcommand{\labelitemi}{$-$}
+	
+%------------------------------------------------------------------------------
+% ----- Pakete: Seitengestaltung, Layout
+%------------------------------------------------------------------------------
+\usepackage[inner=3.3cm, outer=4.6cm, bottom=5.8cm, top=3.5cm]{geometry}
+\usepackage{titlesec}
+	\titleformat{\chapter}[hang]{\Huge}{\thechapter\hspace{20pt}\textcolor{gray}{|}\hspace{20pt}}{0pt}{\Huge}%
+	\titleformat{\section}[hang]{\LARGE}{\thesection\hspace{20pt}}{0pt}{\LARGE}
+	\titleformat{\subsection}[hang]{\Large}{\thesubsection\hspace{20pt}}{0pt}{\Large}%
+	\titleformat{\subsubsection}[hang]{\large}{\thesubsubsection\hspace{20pt}}{0pt}{\large}%
+	\titleformat*{\subsubsection}{\normalfont}
+	
+	% paragraph settings
+	\renewcommand{\baselinestretch}{1.2}
+	\setlength{\parindent}{0cm}
+	
+%------------------------------------------------------------------------------
+% ----- Pakete: Literatur
+%------------------------------------------------------------------------------
+\usepackage[style=numeric, natbib=true]{biblatex}
+	
+%------------------------------------------------------------------------------
+% ----- Eigene Befehle
+%------------------------------------------------------------------------------
+	\newcommand{\zB}{\mbox{z.\,B.}\xspace}
+	\newcommand{\dash}{\mbox{d.\,h.}\xspace}
+	\newenvironment{smatrix}{\ensuremath\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
