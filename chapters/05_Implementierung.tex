@@ -1,0 +1,45 @@
+\chapter{Implementierung}
+\label{chap:implementierung}
+
+\section{Technologische Basis}
+\begin{itemize}
+    \item \textbf{Frontend:} Entwicklung mit React und TypeScript. Integration von Material-UI für UI-Komponenten.
+    \item \textbf{Backend:} Aufbau von RESTful APIs mit .NET Core. Middleware für Authentifizierung und Fehlerbehandlung.
+    \item \textbf{Datenbank:} Datenbankmodellierung und -abfragen in Azure SQL.
+\end{itemize}
+
+\section{Herausforderungen und Lösungen}
+\begin{itemize}
+    \item \textbf{Datenkonsistenz:} Einsatz von Transaktionen in der Datenbank zur Sicherstellung der Datenintegrität.
+    \item \textbf{Echtzeit-Updates:} Nutzung von Azure Service Bus für asynchrone Nachrichtenverarbeitung.
+    \item \textbf{Responsiveness:} Optimierung der Benutzeroberfläche für verschiedene Geräte.
+\end{itemize}
+
+\section{Visualisierungsimplementierung}
+Integration von Chart.js für Donut- und Radarcharts.  
+Beispiel: Erstellung eines Radardiagramms:
+\begin{lstlisting}[language=JavaScript, caption=Erstellung eines Radardiagramms]
+const data = {
+  labels: ['Teamarbeit', 'Effizienz', 'Pünktlichkeit', 'Innovation'],
+  datasets: [
+    {
+      label: 'Mitarbeiter A',
+      data: [80, 90, 70, 85],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 2,
+    },
+  ],
+};
+\end{lstlisting}
+
+\section{Codebeispiele}
+RESTful API-Endpunkt:
+\begin{lstlisting}[language=C, caption=RESTful API-Endpunkt]
+[HttpGet("api/employees/{id}")]
+public IActionResult GetEmployeeData(int id)
+{
+    var employee = _context.Employees.Find(id);
+    return Ok(employee);
+}
+\end{lstlisting}

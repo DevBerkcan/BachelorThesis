@@ -1,0 +1,39 @@
+\chapter{Konzeption des Systems}
+\label{chap:konzeption}
+
+\section{Systemarchitektur}
+\subsection{Architekturüberblick}
+\begin{itemize}
+    \item \textbf{Frontend:} Benutzerinteraktionen und Visualisierung mit React.
+    \item \textbf{Backend:} Datenverarbeitung und -verwaltung mit .NET Core.
+    \item \textbf{Datenbank:} Speicherung der Daten in Azure SQL.
+    \item \textbf{Datenfluss:} Kommunikation zwischen Frontend und Backend über RESTful APIs.
+\end{itemize}
+
+\section{Datenmodell}
+\begin{itemize}
+    \item \textbf{Mitarbeiterdaten:} ID, Name, Position.
+    \item \textbf{Gesprächsdaten:} Mitarbeiter-ID, Datum, Bewertungspunkte.
+    \item \textbf{Visualisierungsparameter:} Diagrammtypen, Datenquellen.
+\end{itemize}
+Beziehungen werden mithilfe eines UML-Diagramms dargestellt.
+
+\section{Visualisierungsdesign}
+\subsection{Diagrammtypen}
+\begin{itemize}
+    \item \textbf{Donut-Charts:} Überblick über den Status von Zielvereinbarungen.
+    \item \textbf{Radarcharts:} Vergleich der Leistung in verschiedenen Kategorien.
+\end{itemize}
+
+\subsection{UI/UX-Überlegungen}
+\begin{itemize}
+    \item Klar strukturierte Benutzeroberfläche.
+    \item Fokus auf einfache Bedienung und schnelle Navigation.
+\end{itemize}
+
+\section{Sicherheitskonzepte}
+\begin{itemize}
+    \item \textbf{Datenverschlüsselung:} SSL für Datenübertragung, AES-256 für Datenspeicherung.
+    \item \textbf{Benutzerrechte:} Zugriffskontrolle basierend auf Rollen (z. B. Admin, Benutzer).
+    \item \textbf{Authentifizierung:} OAuth 2.0 für sichere Anmeldung.
+\end{itemize}
