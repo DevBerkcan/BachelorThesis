@@ -3,39 +3,124 @@
 
 \section{Anforderungen}
 \subsection{Funktionale Anforderungen}
-Das Tool soll folgende Funktionen bieten:
+Das geplante Tool soll den spezifischen Anforderungen der Zielgruppe gerecht werden und folgende Funktionen umfassen:
 \begin{itemize}
-    \item \textbf{Visualisierung:} Darstellung der Gesprächsdaten als Donut- und Radarcharts.
-    \item \textbf{Datenmanagement:} Import, Speicherung und Bearbeitung von Gesprächsdaten.
-    \item \textbf{Export:} Generierung von Berichten in PDF-Format.
-    \item \textbf{Benutzerverwaltung:} Rollenspezifischer Zugriff (z. B. Admins, HR, Führungskräfte).
+    \item \textbf{Visualisierung:} Darstellung der Gesprächsdaten als Donut- und Radarcharts. Diese Diagramme ermöglichen eine schnelle Erfassung von Trends und Leistungskennzahlen und sind besonders geeignet, um die Ergebnisse von Mitarbeitendengesprächen verständlich zu präsentieren \cite{kirk2016data, evergreen2016effective}.
+    \item \textbf{Datenmanagement:} Import, Speicherung und Bearbeitung von Gesprächsdaten. Diese Funktion gewährleistet eine strukturierte Datenverwaltung und unterstützt die Nachverfolgbarkeit vergangener Gespräche \cite{bryson2011employee}.
+    \item \textbf{Export:} Generierung von Berichten im Excel- und PDF-Format, die Führungskräfte für weitere Analysen oder Präsentationen nutzen können.
+    \item \textbf{Benutzerverwaltung:} Rollenspezifischer Zugriff (z. B. Admins, Führungskräfte), um sicherzustellen, dass nur berechtigte Personen auf sensible Daten zugreifen können \cite{duarte2012performance}.
 \end{itemize}
 
 \subsection{Nicht-funktionale Anforderungen}
+Neben den funktionalen Anforderungen sind nicht-funktionale Kriterien von entscheidender Bedeutung, um die Qualität und Effizienz des Tools sicherzustellen:
 \begin{itemize}
-    \item \textbf{Performance:} Schnelle Verarbeitung großer Datenmengen.
-    \item \textbf{Skalierbarkeit:} Anpassung an wachsende Nutzer- und Datenmengen.
-    \item \textbf{Sicherheit:} Schutz sensibler Daten durch Authentifizierung und Verschlüsselung.
+    \item \textbf{Performance:} Schnelle Verarbeitung großer Datenmengen, um Wartezeiten zu minimieren.
+    \item \textbf{Skalierbarkeit:} Fähigkeit, sich an wachsende Nutzer- und Datenmengen anzupassen, insbesondere in großen Organisationen.
+    \item \textbf{Sicherheit:} Schutz sensibler Daten durch moderne Authentifizierungs- und Verschlüsselungsmethoden \cite{schober2008}.
 \end{itemize}
+
+\begin{table}[h!]
+\centering
+\caption{Zusammenfassung der funktionalen und nicht-funktionalen Anforderungen}
+\label{tab:anforderungen_uebersicht}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Anforderung}              & \textbf{Beschreibung}                                                                                                   \\\hline
+Visualisierung                   & Donut- und Radarcharts zur Darstellung von Gesprächsdaten. \\\hline
+Datenmanagement                  & Strukturierter Import, Speicherung und Bearbeitung von Gesprächsdaten. \\\hline
+Export                           & Erstellung von Berichten im Excel- und PDF-Format. \\\hline
+Benutzerverwaltung               & Rollenspezifischer Zugriff auf Gesprächsdaten. \\\hline
+Performance                      & Schnelle Verarbeitung großer Datenmengen. \\\hline
+Skalierbarkeit                   & Anpassungsfähigkeit an wachsende Daten- und Nutzerzahlen. \\\hline
+Sicherheit                       & Schutz sensibler Daten durch Authentifizierung und Verschlüsselung. \\\hline
+\end{tabularx}
+\end{table}
 
 \section{Stakeholder-Interviews und Umfragen}
-Durchführung von Interviews mit Führungskräften und HR-Mitarbeitenden zur Bedarfsanalyse.  
-Ergebnisse:
+\subsection{Methodik}
+Zur Bedarfsanalyse wurden halbstrukturierte Interviews mit Führungskräften und HR-Managern durchgeführt. Ziel dieser Interviews war es, die spezifischen Anforderungen an das geplante Tool zu identifizieren. Die Methodik umfasste folgende Schritte:
 \begin{itemize}
-    \item Bedarf an intuitiven Diagrammen, die Trends und Muster visualisieren.
-    \item Wunsch nach Echtzeit-Updates und übersichtlicher Benutzeroberfläche.
-    \item Anforderung an sichere Speicherung und Vertraulichkeit der Daten.
+    \item \textbf{Teilnehmer:} Führungskräfte und HR-Manager aus verschiedenen Abteilungen.
+    \item \textbf{Interviewfragen:}
+    \begin{itemize}
+        \item Welche Daten benötigen Sie für Ihre Entscheidungsfindung?
+        \item Welche Herausforderungen bestehen bei der Nutzung bestehender Systeme?
+        \item Welche Funktionen wären essenziell für Ihre tägliche Arbeit?
+    \end{itemize}
+    \item \textbf{Auswertung:} Qualitative Analyse der Antworten, um Muster und zentrale Anforderungen zu identifizieren.
 \end{itemize}
+
+\subsection{Ergebnisse}
+Die Analyse der Interviews führte zu folgenden Erkenntnissen:
+\begin{itemize}
+    \item \textbf{Intuitive Diagramme:} Bedarf an einfachen Visualisierungen, die Trends und Muster in den Gesprächsdaten schnell erkennen lassen.
+    \item \textbf{Echtzeit-Updates:} Wunsch nach einer Benutzeroberfläche, die Daten in Echtzeit aktualisiert.
+    \item \textbf{Datensicherheit:} Hohe Anforderungen an die Vertraulichkeit und den Schutz sensibler Gesprächsdaten \cite{bryson2011employee}.
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/stakeholder_results.png}
+    \caption{Ergebnisse der Stakeholder-Analyse.}
+    \label{fig:stakeholder_results}
+\end{figure}
 
 \section{Vergleich bestehender Lösungen}
-Tools wie Tableau und Power BI:
+\subsection{Analyse bestehender Tools}
+\subsection{Die Lösung HRworks}
+HRworks ist ein etabliertes HR-Management-Tool, das zahlreiche Funktionen für die Verwaltung von Mitarbeitendendaten und -prozessen bietet. Dieses Tool wird häufig von Unternehmen unterschiedlicher Größe genutzt, um HR-Prozesse zu digitalisieren und zu vereinfachen. Die Analyse von HRworks im Kontext von Mitarbeitendengesprächen bietet wichtige Einblicke in dessen Stärken und Schwächen.
+
+\subsubsection{Funktionen von HRworks}
+HRworks bietet eine breite Palette von Funktionen, die für HR-Prozesse relevant sind:
 \begin{itemize}
-    \item \textbf{Stärken:} Leistungsstarke Visualisierungen, breite Funktionalität.
-    \item \textbf{Schwächen:} Hoher Preis, oft komplizierte Bedienung.
+    \item \textbf{Personalstammdatenmanagement:} Verwaltung aller relevanten Mitarbeiterinformationen.
+    \item \textbf{Abwesenheitsmanagement:} Digitale Beantragung und Genehmigung von Urlaub und anderen Abwesenheiten.
+    \item \textbf{Zeitmanagement:} Integration von Zeiterfassungssystemen zur genauen Verfolgung der Arbeitszeiten.
+    \item \textbf{Mitarbeitendengespräche:} Unterstützung bei der Planung, Durchführung und Dokumentation von Feedbackgesprächen.
 \end{itemize}
 
-Identifizierte Lücken:
+\subsubsection{Vergleich der Funktionen im Kontext von Mitarbeitendengesprächen}
+Die Funktionen von HRworks für Mitarbeitendengespräche wurden im Hinblick auf die spezifischen Anforderungen an das geplante Tool analysiert.
+
+\begin{table}[h!]
+\centering
+\caption{Vergleich des geplanten Tools mit HRworks}
+\label{tab:vergleich_hrworks}
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{Kriterium}              & \textbf{HRworks}                                                                 & \textbf{Geplantes Tool}                                                          \\\hline
+\textbf{Visualisierung}         & Keine spezialisierte Visualisierung für Mitarbeitendengespräche.                 & Donut- und Radarcharts zur Darstellung von Gesprächsdaten.                      \\\hline
+\textbf{Datenmanagement}        & Umfangreiche Stammdatenverwaltung, jedoch ohne spezifische Analysetools.         & Spezialisierte Funktionen für Import, Speicherung und Bearbeitung von Gesprächsdaten. \\\hline
+\textbf{Export}                 & Generierung von Standardberichten im PDF-Format.                                  & Spezifische Berichte und Diagramme in Excel- und PDF-Format.                    \\\hline
+\textbf{Benutzerfreundlichkeit} & Intuitive Oberfläche, jedoch mit eingeschränkter Anpassbarkeit.                  & Anpassbare Benutzeroberfläche mit Fokus auf Mitarbeitendengespräche.            \\\hline
+\textbf{Integration}            & Integration in allgemeine HR-Prozesse wie Zeiterfassung und Abwesenheitsmanagement. & Integration in spezifische HR-Prozesse für Mitarbeitendengespräche.             \\\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Stärken von HRworks}
+HRworks bietet einige wichtige Vorteile:
 \begin{itemize}
-    \item Mangelnde Anpassung an spezifische Anforderungen von Mitarbeitendengesprächen.
-    \item Keine Integration in bestehende HR-Prozesse.
+    \item \textbf{Umfangreiche HR-Funktionen:} Bietet eine ganzheitliche Lösung für verschiedene HR-Prozesse.
+    \item \textbf{Benutzerfreundlichkeit:} Eine intuitive Oberfläche erleichtert die Bedienung, auch für nicht-technische Nutzer.
+    \item \textbf{Integration:} Unterstützt die Integration mit bestehenden Systemen wie Zeiterfassung oder Abwesenheitsmanagement.
 \end{itemize}
+
+\subsubsection{Schwächen von HRworks}
+Trotz seiner Stärken weist HRworks einige Schwächen auf, insbesondere im Kontext von Mitarbeitendengesprächen:
+\begin{itemize}
+    \item Keine spezialisierte Visualisierung der Gesprächsdaten.
+    \item Begrenzte Anpassungsmöglichkeiten für spezifische Anforderungen an Feedbackgespräche.
+    \item Fehlende Unterstützung für fortgeschrittene Analysetools wie Echtzeit-Updates oder Trendanalysen.
+\end{itemize}
+
+\subsubsection{Zusammenfassung der Analyse}
+HRworks eignet sich gut als umfassendes HR-Management-Tool, erfüllt jedoch nicht alle spezifischen Anforderungen an ein spezialisiertes Tool für Mitarbeitendengespräche. Die Hauptlücke liegt in der fehlenden Unterstützung für erweiterte Visualisierungsoptionen und Datenanalysen. Das geplante Tool zielt darauf ab, diese Lücken zu schließen und eine intuitive Plattform für Führungskräfte zu bieten, die auf die Bedürfnisse von Mitarbeitendengesprächen zugeschnitten ist.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/hrworks_comparison.png}
+    \caption{Visueller Vergleich zwischen HRworks und dem geplanten Tool.}
+    \label{fig:hrworks_comparison}
+\end{figure}
+
+Zusammenfassend bietet die Analysephase eine solide Grundlage für die Entwicklung eines Tools, das die spezifischen Anforderungen von Führungskräften und HR-Teams erfüllt.

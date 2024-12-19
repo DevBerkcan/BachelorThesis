@@ -64,8 +64,16 @@
 	\addto\captionsngerman{\def\tablename{Tab.}}
 	\addto\extrasngerman{\def\tableautorefname{Tab.}}
 \usepackage[english, breaklinks]{hyperref}
-	\hypersetup{colorlinks=false, linkcolor=darkblue, pdfborder={0 0 0}, linktoc=all}
-	\urlstyle{same}	
+\hypersetup{
+    colorlinks=true,        % Aktiviert farbige Links
+    linkcolor=blue,         % Farbe für interne Links (z. B. Inhaltsverzeichnis)
+    citecolor=red,          % Farbe für Zitate/Referenzen
+    urlcolor=blue,          % Farbe für URLs
+    filecolor=magenta,      % Farbe für Dateien
+    pdfborder={0 0 0},      % Deaktiviert Rahmen um Links
+    linktoc=all             % Links auch im Inhaltsverzeichnis aktivieren
+}
+
 
 %------------------------------------------------------------------------------
 % ------ Pakete: Code
@@ -107,8 +115,8 @@
 %------------------------------------------------------------------------------
 % ----- Pakete: Literatur
 %------------------------------------------------------------------------------
-\usepackage[backend=bibtex, style=ieee, natbib=true]{biblatex} % IEEE-Stil mit Biblatex
-\addbibresource{literatur.bib} % Verknüpfung mit der Literaturdatenbank
+\usepackage[backend=bibtex, style=ieee]{biblatex}
+\addbibresource{bib/articles.bib}
 
 %------------------------------------------------------------------------------
 % ----- Eigene Befehle
