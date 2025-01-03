@@ -141,18 +141,20 @@ Die Datenbank ist relational aufgebaut, um eine effiziente Speicherung und Abfra
 \section{Workflows}
 Die Konzeption des Systems umfasst klar definierte Workflows, um eine reibungslose Funktionalität und Effizienz sicherzustellen:
 \begin{itemize}
-    \item \textbf{Datenimport:} Mitarbeitendengesprächsdaten werden über das Backend in die relationale Datenbank importiert. Hierbei wird eine automatische Validierung der Eingabedaten durchgeführt, um die Datenqualität sicherzustellen.
-    \item \textbf{Datenverarbeitung:} Geplante Hintergrundjobs übernehmen Aufgaben wie die Berechnung aggregierter Statistiken, das Generieren von Berichten oder das Versenden von Benachrichtigungen an berechtigte Benutzer.
-    \item \textbf{Visualisierung:} Die aufbereiteten Daten werden über definierte RESTful APIs an das Frontend übermittelt, wo sie durch interaktive Diagramme wie Donut- und Radarcharts anschaulich dargestellt werden.
+    \item \textbf{Datenimport:} Mitarbeitendengesprächsdaten werden über das Backend in die relationale Datenbank importiert. Hierbei wird eine automatische Validierung der Eingabedaten durchgeführt, um die Datenqualität sicherzustellen \cite{gupta2020data, prat2021pipeline}.
+    \item \textbf{Datenverarbeitung:} Geplante Hintergrundjobs übernehmen Aufgaben wie die Berechnung aggregierter Statistiken, das Generieren von Berichten oder das Versenden von Benachrichtigungen an berechtigte Benutzer \cite{hollingsworth2020workflow, apache2023workflow}.
+    \item \textbf{Visualisierung:} Die aufbereiteten Daten werden über definierte RESTful APIs an das Frontend übermittelt, wo sie durch interaktive Diagramme wie Donut- und Radarcharts anschaulich dargestellt werden \cite{kirk2016data, evergreen2016effective}.
 \end{itemize}
+
 
 \section{Sicherheitskonzepte}
 Die Sicherheit des Systems wird durch mehrere bewährte Maßnahmen gewährleistet, um Datenintegrität und Vertraulichkeit sicherzustellen:
 \begin{itemize}
-    \item \textbf{Authentifizierung:} Benutzer authentifizieren sich über Azure Active Directory (AAD), das Multi-Faktor-Authentifizierung und Single Sign-On (SSO) unterstützt.
-    \item \textbf{Datenverschlüsselung:} Alle sensiblen Daten, sowohl im Ruhezustand als auch während der Übertragung, werden durch moderne Verschlüsselungsmethoden wie AES-256 geschützt.
-    \item \textbf{Rechteverwaltung:} Eine fein granulierte, rollenspezifische Zugriffskontrolle (RBAC) stellt sicher, dass nur autorisierte Benutzer auf spezifische Daten und Funktionen zugreifen können.
+    \item \textbf{Authentifizierung:} Benutzer authentifizieren sich über Azure Active Directory (AAD), das Multi-Faktor-Authentifizierung (MFA) und Single Sign-On (SSO) unterstützt \cite{microsoftAAD}.
+    \item \textbf{Datenverschlüsselung:} Alle sensiblen Daten, sowohl im Ruhezustand als auch während der Übertragung, werden durch moderne Verschlüsselungsmethoden wie AES-256 geschützt \cite{schneier2015applied}.
+    \item \textbf{Rechteverwaltung:} Eine fein granulierte, rollenspezifische Zugriffskontrolle (RBAC) stellt sicher, dass nur autorisierte Benutzer auf spezifische Daten und Funktionen zugreifen können \cite{ferraiolo2003rbac}.
 \end{itemize}
+
 
 \section{Zusammenfassung}
 Die vorgestellte Konzeption kombiniert innovative Technologien, effiziente Workflows und umfassende Sicherheitsmaßnahmen, um eine performante und skalierbare Lösung für die Verwaltung und Visualisierung von Mitarbeitendengesprächsdaten zu gewährleisten. Durch den gezielten Einsatz moderner Entwicklungs- und Sicherheitsstandards wird eine benutzerfreundliche und zuverlässige Plattform geschaffen, die den Anforderungen sowohl auf technischer als auch auf organisatorischer Ebene gerecht wird.
