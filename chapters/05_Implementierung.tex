@@ -16,7 +16,7 @@ Das Frontend wurde mit einer komponentenbasierten Architektur entwickelt, die ei
 \begin{itemize}
     \item \textbf{Komponenten:} Jedes UI-Element wurde als eigenständige Komponente entwickelt, um Wartbarkeit und Wiederverwendbarkeit zu maximieren.
     \item \textbf{State-Management:} Für die Verwaltung globaler Zustände kommen Redux Toolkit und Zustand zum Einsatz.
-    \item \textbf{Datenvisualisierung:} ApexCharts und React-ApexCharts werden zur Darstellung von Donut- und Radarcharts verwendet.
+    \item \textbf{Datenvisualisierung:} ApexCharts und React-AäpexCharts werden zur Darstellung von Donut- und Radarcharts verwendet.
 \end{itemize}
 
 \begin{minted}[linenos, frame=single, fontsize=\small, caption=Beispiel einer React-Komponente, label=lst:react_component]{javascript}
@@ -64,7 +64,7 @@ Die Entwicklung des Backends erfordert eine fundierte Auswahl moderner Technolog
     \item \textbf{Middleware:} Authentifizierung und Fehlerbehandlung werden zentral über Middleware-Komponenten gesteuert.
 \end{itemize}
 
-\begin{lstlisting}[language=C, caption=Beispiel eines .NET Core Controllers, label=lst:dotnet_controller]
+\begin{minted}[linenos, frame=single, fontsize=\small, caption=Beispiel eines .NET Core Controllers, label=lst:dotnet_controller]{csharp}
 [ApiController]
 [Route("api/[controller]")]
 public class EmployeeController : ControllerBase
@@ -87,7 +87,8 @@ public class EmployeeController : ControllerBase
         return Ok(employee);
     }
 }
-\end{lstlisting}
+\end{minted}
+
 
 \subsection{Sicherheitsmechanismen und Skalierbarkeit}
 Die Sicherheitsmechanismen des Backends gewährleisten die Integrität und Vertraulichkeit sensibler Daten. Hierzu zählen:
