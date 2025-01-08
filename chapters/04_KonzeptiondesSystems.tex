@@ -16,7 +16,7 @@ Die Systemarchitektur basiert auf einem klassischen Client-Server-Modell, das ei
 
 Das Frontend wird mit React entwickelt, einer modernen JavaScript-Bibliothek, die durch ihre komponentenbasierte Struktur eine effiziente Erstellung und Wiederverwendbarkeit von Benutzeroberflächen ermöglicht \cite{stefanov2021react}. Um die Entwicklungszeit zu verkürzen und eine optimale Performance zu gewährleisten, wird Vite als Build-Tool eingesetzt. Die visuelle Darstellung von Daten wird durch Bibliotheken wie ApexCharts unterstützt, die interaktive und ansprechende Diagramme ermöglichen \cite{apexchartsDoc}.
 
-Das Backend wird mit .NET Core realisiert, einem plattformunabhängigen Framework, das sich durch hohe Performance und Flexibilität auszeichnet \cite{microsoftDotNet}. Es stellt RESTful APIs bereit, die die Kommunikation zwischen Frontend und Backend ermöglichen, und verwendet Azure-Dienste wie den Azure Service Bus für die Integration von asynchronen Prozessen \cite{azureServiceBus}. Azure Active Directory wird für die sichere Authentifizierung der Benutzer eingesetzt, während Azure SQL eine robuste Datenbanklösung für die Speicherung und Verarbeitung von Daten bereitstellt \cite{azureDocumentation}.
+Das Backend wird mit .NET Core realisiert, einem plattformunabhängigen Framework, das sich durch hohe Performance und Flexibilität auszeichnet \cite{microsoftDotNet}. Es stellt RESTful APIs bereit, die die Kommunikation zwischen Frontend und Backend ermöglichen, und verwendet Azure-Dienste wie den Azure Service Bus für die Integration von asynchronen Prozessen \cite{azureServiceBus}. Azure Active Directory wird für die sichere Authentifizierung der Benutzer eingesetzt, während MS SQL eine robuste Datenbanklösung für die Speicherung und Verarbeitung von Daten bereitstellt \cite{azureDocumentation}.
 
 Durch die Kombination dieser Technologien wird sichergestellt, dass das System eine hohe Skalierbarkeit, Stabilität und nahtlose Integration in bestehende Infrastrukturen bietet. Diese modulare Architektur unterstützt eine schnelle Weiterentwicklung und Anpassung an zukünftige Anforderungen.
 
@@ -81,7 +81,18 @@ Das Backend des Systems wird mit .NET Core entwickelt, um eine robuste und skali
 \subsubsection*{Zentrale Dienste und Technologien}
 Das Backend basiert auf einer modularen Architektur und integriert die folgenden Komponenten:
 \begin{itemize}
-    \item \textbf{Azure Service Bus:} Wird für die Verarbeitung und Synchronisation von Nachrichten zwischen den verschiedenen Systemkomponenten eingesetzt. Diese Technologie ermöglicht die asynchrone Kommunikation und trägt zur Skalierbarkeit des Systems bei.\cite{azureServiceBus2024}
+    \item \textbf{Azure Service Bus:} Wird für die Verarbeitung und Synchronisation von Nachrichten zwischen den verschiedenen Systemkomponenten eingesetzt. Diese Technologie ermöglicht die asynchrone Kommunikation und trägt zur Skalierbarkeit des Systems bei \cite{azureServiceBus2024}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/Azure (2019) framework - Page 1.png}
+    \caption{Architektur des Azure Service Bus im Publish-Subscribe-Pattern.}
+    \label{fig:azure_bus_architecture}
+\end{figure}
+
+Das Publish-Subscribe-Muster, wie in Abbildung~\ref{fig:azure_bus_architecture} dargestellt, reduziert die Kopplung zwischen Systemkomponenten, da Nachrichten gezielt über Topics an registrierte Subskriptionen verteilt werden können. Dies ermöglicht nicht nur eine bessere Skalierbarkeit, sondern auch die flexible Integration neuer Komponenten ohne Änderungen an bestehenden Systemteilen.
+
+
     \item \textbf{DBContext:} Entity Framework Core wird für den Datenbankzugriff verwendet, wodurch eine einfache Verwaltung und Abfrage der relationalen Datenbank ermöglicht wird.\cite{entityFrameworkCore2020}
     \item \textbf{Hintergrundjobs:} Automatisierte Aufgaben wie das Verarbeiten von Berichten, das Versenden von Benachrichtigungen oder das Berechnen aggregierter Daten werden über geplante Hintergrundprozesse realisiert.\cite{backgroundTasks2017}
     \item \textbf{RESTful APIs:} Das Backend stellt definierte Endpunkte für die Kommunikation mit dem Frontend bereit, um den sicheren und effizienten Austausch von Daten zu gewährleisten \cite{microsoftDotNet}.
@@ -108,13 +119,7 @@ Das Backend ist tief in die Microsoft Azure-Infrastruktur integriert, um maximal
 
 \subsection{Datenbankdesign}
 
-Die Datenbank ist das Rückgrat des Systems und basiert auf einer relationalen Struktur, die mit Microsoft SQL Server realisiert wird. Die Haupttabellen umfassen:
-\begin{itemize}
-    \item \textbf{EmployeeAppraisalData:} Speichert Stammdaten der Mitarbeitenden, wie Namen, Jobtitel und IDs.
-    \item \textbf{EmployeeAppraisal:} Enthält spezifische Daten zu Mitarbeitendengesprächen, wie Datum, beteiligte Personen und Ergebnisse.
-    \item \textbf{AppraisalGroup, AppraisalSubgroup, AppraisalQuestion:} Diese Tabellen strukturieren die Inhalte und Fragen der Gespräche.
-    \item \textbf{AppraisalStatus:} Dokumentiert den aktuellen Fortschritt eines Mitarbeitendengesprächs, z. B. „In Bearbeitung“ oder „Abgeschlossen“.
-\end{itemize}
+Die Datenbank ist das Rückgrat des Systems und basiert auf einer relationalen Struktur, die mit Microsoft SQL Server realisiert wird.
 
 Die Struktur der Datenbank ist darauf ausgelegt, eine effiziente Speicherung und Verarbeitung großer Datenmengen zu ermöglichen. Zusätzlich wird die Datenbank über Entity Framework Core angebunden, um eine einfache Interaktion mit der Anwendungsschicht zu gewährleisten.
 
@@ -154,7 +159,7 @@ Die Datenbank ist relational aufgebaut, um eine effiziente Speicherung und Abfra
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/er_modell_design.png}
+    \includegraphics[width=1.0\textwidth]{images/er_modell_design.png}
     \caption{ER-Diagramm der Datenbankstruktur.}
     \label{fig:db_er_model}
 \end{figure}
@@ -172,7 +177,7 @@ Die Konzeption des Systems umfasst klar definierte Workflows, um eine reibungslo
 Die Sicherheit des Systems wird durch mehrere bewährte Maßnahmen gewährleistet, um Datenintegrität und Vertraulichkeit sicherzustellen:
 \begin{itemize}
     \item \textbf{Authentifizierung:} Benutzer authentifizieren sich über Azure Active Directory (AAD), das Multi-Faktor-Authentifizierung (MFA) und Single Sign-On (SSO) unterstützt \cite{microsoftAAD}.
-    \item \textbf{Datenverschlüsselung:} Alle sensiblen Daten, sowohl im Ruhezustand als auch während der Übertragung, werden durch moderne Verschlüsselungsmethoden wie AES-256 geschützt \cite{schneier2015applied}.
+    \item \textbf{Datenverschlüsselung:} Alle sensiblen Daten, sowohl im Ruhezustand als auch während der Übertragung, werden durch moderne Verschlüsselungsmethoden wie SHA geschützt \cite{schneier2015applied}.
     \item \textbf{Rechteverwaltung:} Eine fein granulierte, rollenspezifische Zugriffskontrolle (RBAC) stellt sicher, dass nur autorisierte Benutzer auf spezifische Daten und Funktionen zugreifen können \cite{ferraiolo2003rbac}.
 \end{itemize}
 

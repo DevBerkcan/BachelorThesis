@@ -110,13 +110,6 @@ Die Einbindung von Microsoft Azure-Diensten spielt eine zentrale Rolle in der Ba
     \item \textbf{Automatisierung:} Erstellung automatisierter Berichte und datenbasierter Einblicke aus den gespeicherten Gesprächsdaten.
 \end{itemize}
 
-\subsection{Optimierung der Datenverarbeitung}
-Durch die Implementierung moderner Algorithmen wird die Verarbeitung komplexer Datenstrukturen optimiert:
-\begin{itemize}
-    \item \textbf{Natural Language Processing (NLP):} Analyse unstrukturierter Gesprächsnotizen zur Erkennung von Mustern und Trends.
-    \item \textbf{Datenaggregation:} Konsolidierung unterschiedlicher Quellen zur Erstellung ganzheitlicher Analysen.
-\end{itemize}
-
 \subsection{Überwachung und Wartbarkeit}
 Eine modulare Architektur unterstützt die Wartbarkeit und Überwachung des Systems:
 \begin{itemize}
@@ -131,12 +124,7 @@ Die Backend-Entwicklung kombiniert moderne Technologien und Sicherheitsmechanism
 \subsection{Datenbankmodell}
 Die relationale Datenbank wurde mit Azure SQL implementiert. Wichtige Tabellen und deren Beziehungen sind in Abbildung~\ref{fig:db_er_model} dargestellt. Das Schema wurde so gestaltet, dass es sowohl aktuelle als auch historische Daten effizient speichern kann.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/er_modell_design.png}
-    \caption{ER-Diagramm der Datenbankstruktur.}
-    \label{fig:db_er_model}
-\end{figure}
+
 
 \subsection{Fehleranalyse und Herausforderungen während der Implementierung}
 Während der Implementierung traten verschiedene Herausforderungen und Fehler auf, die den Entwicklungsprozess beeinflussten. Diese Probleme wurden systematisch analysiert und durch passende Lösungen behoben:
@@ -150,17 +138,6 @@ Während der Implementierung traten verschiedene Herausforderungen und Fehler au
     \item \textbf{Performance-Probleme:} Bei Abfragen großer Datensätze kam es zu erheblichen Verzögerungen. \\
     \textbf{Lösung:} Optimierung der SQL-Abfragen und Implementierung von Indizes zur Verbesserung der Abfragegeschwindigkeit.
 \end{itemize}
-
-
-\section{Herausforderungen und Lösungen}
-\subsection{Datenkonsistenz}
-Um die Konsistenz der Daten zu gewährleisten, wurde eine Transaktionsverwaltung implementiert. Dies verhindert Dateninkonsistenzen bei parallelen Datenbankoperationen.
-
-\subsection{Echtzeit-Updates}
-Mit Azure Service Bus wurde eine asynchrone Kommunikation ermöglicht. Dies erlaubt Echtzeit-Benachrichtigungen an Benutzer, ohne die Backend-Leistung zu beeinträchtigen.
-
-\subsection{Optimierung der Benutzerfreundlichkeit}
-Durch regelmäßige Usability-Tests und die iterative Anpassung der UI-Elemente wurde die Benutzerfreundlichkeit kontinuierlich verbessert.
 
 \section{Test- und Debugging-Prozesse}
 \subsection{Frontend-Tests}
