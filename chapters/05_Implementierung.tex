@@ -64,30 +64,34 @@ Die Entwicklung des Backends erfordert eine fundierte Auswahl moderner Technolog
     \item \textbf{Middleware:} Authentifizierung und Fehlerbehandlung werden zentral über Middleware-Komponenten gesteuert.
 \end{itemize}
 
-\begin{minted}[linenos, frame=single, fontsize=\small, caption=Beispiel eines .NET Core Controllers, label=lst:dotnet_controller]{csharp}
-[ApiController]
-[Route("api/[controller]")]
-public class EmployeeController : ControllerBase
-{
-    private readonly EmployeeService _employeeService;
+\subsection{API-Endpunkte}
+Zur Interaktion mit den Daten des Systems wurden verschiedene API-Endpunkte implementiert. Die folgende Tabelle listet die wesentlichen HTTP-Methoden und URLs zur Manipulation von Ressourcen:
 
-    public EmployeeController(EmployeeService employeeService)
-    {
-        _employeeService = employeeService;
-    }
+\begin{table}[H]
+\caption{HTTP-Methoden und URLs zur Manipulation von Ressourcen}
+\label{table:http-methods}
+\raggedright
+{\scriptsize Quelle: Eigene Darstellung} \\[0.3em]
+\renewcommand{\arraystretch}{1.1} % Leichter reduzierter Zeilenabstand
+\setlength{\tabcolsep}{1.8pt} % Weiter verringerter horizontaler Zellabstand
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{5.5cm}|>{\raggedright\arraybackslash}m{6.5cm}}
+\hline
+\textbf{HTTP-Methoden} & \textbf{URL /odata/v\{version\}} & \textbf{Beschreibung} \\ \hline
+GET & /employeeAppraisals/\{appraisalId\} & Lese ein einzelnes Mitarbeitergespräch anhand der eindeutigen ID, um detaillierte Informationen zu erhalten. \\ \hline
+GET & /employeeAppraisals & Lese alle Mitarbeitergespräche zur Analyse und Berichterstellung. \\ \hline
+POST & /employeeAppraisals & Erstelle ein neues Mitarbeitergespräch und speichere es im System. \\ \hline
+GET & /employeeAppraisals/all & Lese alle verfügbaren Mitarbeitergespräche, einschließlich archivierter Daten. \\ \hline
+GET & /employeeAppraisals/last & Lese die zuletzt eingetragenen Mitarbeitergespräche. \\ \hline
+POST & /employeeAppraisals/CheckBox & Erstelle oder aktualisiere Checkbox-Daten für Mitarbeitergespräche, z. B. um spezifische Kriterien zu markieren. \\ \hline
+\end{tabularx}
+\end{table}
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetEmployeeById(int id)
-    {
-        var employee = await _employeeService.GetEmployeeByIdAsync(id);
-        if (employee == null)
-        {
-            return NotFound();
-        }
-        return Ok(employee);
-    }
-}
-\end{minted}
+
+\subsection{Beispiel eines Controllers}
+Ein Beispiel für einen .NET Core Controller, der die oben genannten Endpunkte implementiert, ist in Listing \ref{lst:dotnet_controller} dargestellt.
+
+
+%TODO%
 
 
 \subsection{Sicherheitsmechanismen und Skalierbarkeit}
@@ -117,7 +121,6 @@ Durch die Implementierung moderner Algorithmen wird die Verarbeitung komplexer D
 Eine modulare Architektur unterstützt die Wartbarkeit und Überwachung des Systems:
 \begin{itemize}
     \item \textbf{Monitoring:} Ein spezifisches Monitoring-System identifiziert Leistungseinbußen und sendet Warnmeldungen.
-    \item \textbf{Automatisierte Tests:} Sicherstellung der Funktionsfähigkeit durch kontinuierliche Integration und Tests.
     \item \textbf{Containerisierung:} Verwendung von Docker, um Konsistenz zwischen Entwicklungs- und Produktionsumgebungen sicherzustellen.
 \end{itemize}
 
@@ -134,6 +137,20 @@ Die relationale Datenbank wurde mit Azure SQL implementiert. Wichtige Tabellen u
     \caption{ER-Diagramm der Datenbankstruktur.}
     \label{fig:db_er_model}
 \end{figure}
+
+\subsection{Fehleranalyse und Herausforderungen während der Implementierung}
+Während der Implementierung traten verschiedene Herausforderungen und Fehler auf, die den Entwicklungsprozess beeinflussten. Diese Probleme wurden systematisch analysiert und durch passende Lösungen behoben:
+\begin{itemize}
+    \item \textbf{Problem mit Datenkonsistenz:} Bei parallelen Datenbankoperationen traten Inkonsistenzen in den gespeicherten Daten auf. \\
+    \textbf{Lösung:} Einführung einer Transaktionsverwaltung im Backend mit Entity Framework Core.
+    
+    \item \textbf{Middleware-Konflikte:} Fehler in der Middleware-Konfiguration führten zu unerwarteten API-Antworten. \\
+    \textbf{Lösung:} Erstellung detaillierter Tests für die Middleware-Komponenten und verbesserte Fehlerbehandlung.
+
+    \item \textbf{Performance-Probleme:} Bei Abfragen großer Datensätze kam es zu erheblichen Verzögerungen. \\
+    \textbf{Lösung:} Optimierung der SQL-Abfragen und Implementierung von Indizes zur Verbesserung der Abfragegeschwindigkeit.
+\end{itemize}
+
 
 \section{Herausforderungen und Lösungen}
 \subsection{Datenkonsistenz}

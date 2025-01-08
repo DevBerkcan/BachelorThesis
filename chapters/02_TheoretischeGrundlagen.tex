@@ -1,43 +1,64 @@
 \chapter{Theoretische Grundlagen}
 \label{chap:theoretische-grundlagen}
 
-Die individuelle Entwicklung von Mitarbeitenden erfolgt maßgeblich durch zielgerichtete Gespräche und datengestützte Feedbackprozesse. Die folgenden Abschnitte beleuchten die Bedeutung von Mitarbeitendengesprächen, die Rolle der Datenvisualisierung in diesem Kontext sowie die technologischen Grundlagen für deren Implementierung. Hierbei wird auf die Verknüpfung von strategischen Unternehmenszielen und persönlichen Entwicklungsmöglichkeiten eingegangen, um eine nachhaltige Verbesserung der Teamdynamik und der Leistungseffizienz zu fördern. Diese theoretischen Grundlagen bilden das Fundament für die anschließende Analyse und Entwicklung eines optimalen Systems zur Visualisierung von Mitarbeitendengesprächsdaten.
+Die individuelle Entwicklung von Mitarbeitenden erfolgt maßgeblich durch zielgerichtete Gespräche und datengestützte Feedbackprozesse. Die folgenden Abschnitte beleuchten die Bedeutung von Mitarbeitendengesprächen, die Rolle der Datenvisualisierung in diesem Kontext sowie die technologische Basis für deren Implementierung. Hierbei wird auf die Verknüpfung von strategischen Unternehmenszielen und persönlichen Entwicklungsmöglichkeiten eingegangen, um eine nachhaltige Verbesserung der Teamdynamik und Leistungseffizienz zu fördern. Diese theoretischen Grundlagen bilden das Fundament für die anschließende Analyse und Entwicklung eines optimalen Systems zur Visualisierung von Mitarbeitendengesprächsdaten.
 
 \section{Mitarbeitendengespräche und ihre Bedeutung}
-Mitarbeitendengespräche, auch „MAG“ genannt, umfassen alle Gespräche, die Vorgesetzte aus verschiedenen Anlässen mit ihren Mitarbeitenden führen. Ziel dieser Gespräche ist es, Informationen zu vermitteln, einen Meinungsaustausch zu ermöglichen sowie Wertschätzung, Lob und gegebenenfalls Kritik auszudrücken \cite{schober2008}. Darüber hinaus bieten sie die Gelegenheit, Probleme zu analysieren und bevorstehende Veränderungen zu besprechen. Regelmäßige Mitarbeitendengespräche, die in der Regel ein- bis zweimal jährlich stattfinden, tragen wesentlich zur Verbesserung der innerbetrieblichen Kommunikation, Zusammenarbeit und Partizipation bei. Dabei ist die kommunikative Kompetenz der Führungskräfte eine wesentliche Grundlage für den Erfolg solcher Gespräche.
-
-Typischerweise umfassen Mitarbeitendengespräche mehrere zentrale Elemente:
+Mitarbeitendengespräche, auch als „MAG“ bezeichnet, umfassen alle Gespräche, die Vorgesetzte mit Mitarbeitenden zu spezifischen Anlässen führen. Diese Gespräche dienen dazu:
 \begin{itemize}
-    \item \textbf{Bewertung der bisherigen Zielerreichung:} Eine retrospektive Betrachtung, in der der Fortschritt in Bezug auf zuvor gesetzte Ziele analysiert wird \cite{duarte2012performance}.
-    \item \textbf{Setzen neuer Ziele:} Definition von SMART-Zielen (spezifisch, messbar, akzeptiert, realistisch, terminiert), die die Grundlage für die zukünftige Arbeit bilden \cite{duarte2012performance}.
-    \item \textbf{Diskussion von Entwicklungsmaßnahmen:} Identifikation von Schulungsbedarf, Weiterbildungsangeboten und anderen Maßnahmen, die das persönliche und berufliche Wachstum fördern \cite{bryson2011employee}.
+    \item Informationen auszutauschen,
+    \item Wertschätzung, Lob oder Kritik zu äußern und
+    \item Entwicklungsziele zu formulieren \cite{schober2008}.
 \end{itemize}
 
-Eine strukturierte Gesprächsführung kann die Effektivität von Führungskräften erheblich steigern, indem sie ihre Rolle als Unterstützer*innen und Entwicklungsbegleiter*innen verstärkt. Dies schließt die Bewertung von Leistungen ebenso ein wie die Identifikation gemeinsamer Entwicklungsziele, wodurch nicht nur die Bindung der Mitarbeitenden an das Unternehmen erhöht wird, sondern auch ihre beruflichen Ambitionen im Einklang mit den Unternehmenszielen stehen \cite{barton2012}. Subjektive Beurteilungen stellen jedoch eine bekannte Herausforderung in Mitarbeitendengesprächen dar, da sie zu Verzerrungen führen können. Der Einsatz datenbasierter Methoden minimiert solche Verzerrungen und schafft eine objektive Grundlage für fundierte Entscheidungen \cite{heikkila2018}.
+Ein strukturierter Ablauf solcher Gespräche fördert die innerbetriebliche Kommunikation und die Bindung der Mitarbeitenden an das Unternehmen. Typische Elemente von Mitarbeitendengesprächen sind:
+\begin{itemize}
+    \item \textbf{Bewertung der bisherigen Zielerreichung:} Analyse des Fortschritts in Bezug auf zuvor gesetzte Ziele \cite{duarte2012performance}.
+    \item \textbf{Setzen neuer Ziele:} Definition von SMART-Zielen (spezifisch, messbar, akzeptiert, realistisch, terminiert), die eine klare Richtung für die zukünftige Arbeit vorgeben \cite{duarte2012performance}.
+    \item \textbf{Diskussion von Entwicklungsmaßnahmen:} Identifikation von Schulungsbedarf und Weiterbildungsangeboten zur Förderung von persönlichem und beruflichem Wachstum \cite{bryson2011employee}.
+\end{itemize}
+
+Eine strukturierte Gesprächsführung kann Verzerrungen durch subjektive Einschätzungen minimieren, insbesondere durch den Einsatz datenbasierter Methoden \cite{heikkila2018}. Dies unterstützt Führungskräfte dabei, fundierte Entscheidungen zu treffen, die sowohl die individuellen Ziele der Mitarbeitenden als auch die strategischen Unternehmensziele berücksichtigen \cite{barton2012}.
 
 \section{Relevanz von Datenvisualisierung}
-Datenvisualisierung ist ein wesentlicher Bestandteil moderner Analytik und spielt eine entscheidende Rolle bei der Interpretation komplexer Informationen. Sie ermöglicht es, große Datenmengen in visuelle Formate umzuwandeln, die einfacher zu verstehen und zu analysieren sind \cite{kirk2016data}. Im Kontext von Mitarbeitendengesprächen kann die Visualisierung dazu beitragen, Muster und Zusammenhänge aufzudecken, die durch reine Text- oder Tabellenform schwer erkennbar sind.
+Datenvisualisierung ist ein zentraler Bestandteil moderner Analytik und spielt eine entscheidende Rolle bei der Interpretation komplexer Informationen. Sie unterstützt Führungskräfte dabei, datenbasierte Entscheidungen zu treffen, indem sie große Datenmengen in verständliche visuelle Darstellungen umwandelt \cite{kirk2016data}. 
 
-Einige der Hauptvorteile von Datenvisualisierung umfassen:
+\subsection*{Hauptvorteile der Datenvisualisierung}
 \begin{itemize}
-    \item \textbf{Verbesserte Entscheidungsfindung:} Führungskräfte können fundierte Entscheidungen treffen, da sie die Daten auf einen Blick verstehen \cite{kirk2016data}.
-    \item \textbf{Erkennung von Trends und Abweichungen:} Historische und aktuelle Daten können leicht verglichen werden, um positive oder negative Entwicklungen zu identifizieren \cite{ware2012information}.
-    \item \textbf{Kommunikation und Präsentation:} Datenvisualisierung erleichtert die Präsentation von Ergebnissen und fördert eine klare Kommunikation zwischen Teams \cite{evergreen2016effective}.
+    \item \textbf{Verbesserte Entscheidungsfindung:} Daten werden schneller und effizienter interpretiert \cite{kirk2016data}.
+    \item \textbf{Erkennung von Trends und Abweichungen:} Historische und aktuelle Daten können leicht verglichen werden, um Entwicklungen zu identifizieren \cite{ware2012information}.
+    \item \textbf{Kommunikation und Präsentation:} Visualisierte Daten fördern eine klare Kommunikation zwischen Teams und Stakeholdern \cite{evergreen2016effective}.
 \end{itemize}
 
-Besonders Radarcharts und Donutcharts sind für die Visualisierung von Mitarbeitendengesprächsdaten ideal geeignet. Radarcharts ermöglichen einen direkten Vergleich mehrerer Leistungsdimensionen wie Teamarbeit, Effizienz und Pünktlichkeit \cite{heikkila2018}, während Donutcharts einen schnellen Überblick über den Status von Zielvereinbarungen bieten \cite{evergreen2016effective}.
+Im Kontext von Mitarbeitendengesprächen sind Radarcharts und Donutcharts besonders geeignet:
+\begin{itemize}
+    \item \textbf{Radarcharts:} Vergleich mehrerer Leistungsdimensionen wie Teamarbeit, Effizienz und Pünktlichkeit \cite{heikkila2018}.
+    \item \textbf{Donutcharts:} Übersicht über den Status von Zielvereinbarungen oder Fortschritten \cite{evergreen2016effective}.
+\end{itemize}
+\newpage
 
 \section{Technologische Basis}
-Die technologische Basis eines modernen Systems zur Visualisierung von Mitarbeitendengesprächsdaten stellt eine wesentliche Grundlage für dessen Funktionalität und Benutzerfreundlichkeit dar. Für die Entwicklung wurden moderne Technologien und Frameworks ausgewählt:
+Die technologische Basis für ein System zur Visualisierung von Mitarbeitendengesprächsdaten ist entscheidend für dessen Funktionalität, Benutzerfreundlichkeit und Skalierbarkeit. Die ausgewählten Technologien umfassen:
 
 \begin{itemize}
-    \item \textbf{React:} Eine JavaScript-Bibliothek, die die komponentenbasierte Entwicklung interaktiver Benutzeroberflächen ermöglicht und dabei Flexibilität sowie Skalierbarkeit bietet \cite{stefanov2021react}.
-    \item \textbf{TypeScript:} Eine Erweiterung von JavaScript, die statische Typisierung bietet und dadurch die Codequalität verbessert \cite{typeScriptDocumentation}.
-    \item \textbf{.NET Core:} Ein plattformunabhängiges Framework für die Entwicklung skalierbarer Webanwendungen \cite{microsoftDotNet}.
-    \item \textbf{Azure SQL:} Eine cloudbasierte Datenbanklösung, die hohe Verfügbarkeit und Sicherheit bietet \cite{azureDocumentation}.
+    \item \textbf{React:} Eine JavaScript-Bibliothek für die komponentenbasierte Entwicklung dynamischer Benutzeroberflächen \cite{stefanov2021react}.
+    \item \textbf{TypeScript:} Erweiterung von JavaScript mit statischer Typisierung zur Verbesserung der Codequalität \cite{typeScriptDocumentation}.
+    \item \textbf{.NET Core:} Plattformübergreifendes Framework für die Entwicklung skalierbarer und leistungsstarker Backend-Anwendungen \cite{microsoftDotNet}.
+    \item \textbf{Azure SQL:} Eine cloudbasierte Datenbanklösung, die Sicherheit und Skalierbarkeit für große Datenmengen bietet \cite{azureDocumentation}.
+    \item \textbf{Azure Services:} Verschiedene Dienste von Microsoft Azure wurden in der Implementierung genutzt, um eine umfassende und skalierbare Lösung zu gewährleisten:
+    \begin{itemize}
+       \item \textbf{Entra ID (ehemals Azure Active Directory):} Entra ID bietet umfassende Authentifizierungs- und Autorisierungsdienste, einschließlich Multi-Faktor-Authentifizierung und rollenbasierter Zugriffskontrolle. Studien zeigen, dass die Verwendung solcher Systeme die Sicherheit und Effizienz in Unternehmen erheblich erhöht \cite{microsoftEntraID, woods2020authentication}.
+\item \textbf{Microsoft Graph API:} Diese API ermöglicht die Interaktion mit verschiedenen Microsoft-Diensten, wie Benutzerdatenabfragen und Kalenderintegration. Laut aktuellen Forschungsergebnissen ist die Nutzung von Graph APIs ein Schlüssel für die Automatisierung und Integration in moderne Softwarelandschaften \cite{microsoftGraphAPI, smith2021graph}.
+\item \textbf{Application Insights:} Ein Telemetriedienst, der zur Überwachung und Analyse der Anwendungsleistung eingesetzt wird. Studien belegen, dass Application Insights eine signifikante Verbesserung in der Fehlerdiagnose und Performanceanalyse moderner Cloud-Anwendungen ermöglicht \cite{microsoftAppInsights, li2021monitoring}.
+\item \textbf{CI/CD-Pipeline:} Mit Azure DevOps werden automatisierte Continuous Integration und Continuous Deployment (CI/CD) umgesetzt, um Entwicklungs- und Bereitstellungsprozesse zu optimieren. Aktuelle Veröffentlichungen zeigen, dass CI/CD-Pipelines die Bereitstellungszeit um bis zu 50 \% reduzieren können \cite{azureDevOps, fowler2020continuous}.
+
+    \end{itemize}
 \end{itemize}
 
-Diese Technologien gewährleisten eine nahtlose Integration und Verarbeitung großer Datenmengen. Die Kombination aus React und TypeScript ermöglicht eine dynamische Benutzeroberfläche, während .NET Core und Azure SQL die Backend-Architektur skalierbar und sicher gestalten \cite{microsoftAzure}.
 
-Zusammenfassend zeigt sich, dass Mitarbeitendengespräche, unterstützt durch moderne Technologien und Datenvisualisierung, ein enormes Potenzial für die Förderung der Teamdynamik und die Erreichung organisatorischer Ziele bieten. Die ausgewählten Technologien schaffen eine robuste Basis für die Entwicklung eines benutzerfreundlichen Systems zur effizienten Verwaltung und Analyse von Mitarbeitendendaten.
+\subsection*{Integration der Technologien}
+Die Kombination aus React und TypeScript ermöglicht die Entwicklung einer flexiblen und responsiven Benutzeroberfläche. Backend-seitig sorgt .NET Core für eine skalierbare und performante Architektur, während Azure SQL als sichere Speicherlösung dient. Die enge Verzahnung dieser Technologien gewährleistet eine effiziente Datenverarbeitung und nahtlose Integration in bestehende Infrastrukturen \cite{microsoftAzure}.
+
+\section{Zusammenfassung}
+Mitarbeitendengespräche, unterstützt durch Datenvisualisierung und moderne Technologien, bieten erhebliches Potenzial zur Förderung der Teamdynamik und zur Erreichung von Unternehmenszielen. Die theoretischen Grundlagen zeigen, dass die Kombination von strukturierten Gesprächen, datenbasierter Entscheidungsfindung und technologischen Innovationen die Basis für ein effizientes und skalierbares System bildet.
 

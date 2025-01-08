@@ -22,8 +22,7 @@ Durch die Kombination dieser Technologien wird sichergestellt, dass das System e
 
 
 \subsection{Frontend-Architektur}
-
-Das Frontend des Systems wird mit React und Vite entwickelt, um eine hohe Performance und schnelle Entwicklungszyklen zu gewährleisten. React dient als Kerntechnologie für die komponentenbasierte Architektur, während Vite als moderner Build-Toolchain für eine optimale Ladezeit und Hot-Module-Replacement verwendet wird.
+Das Frontend des Systems wird mit React und Vite entwickelt, um eine hohe Performance und schnelle Entwicklungszyklen zu gewährleisten. React dient als Kerntechnologie für die komponentenbasierte Architektur \cite{facebook2021react}, während Vite als moderner Build-Toolchain für eine optimale Ladezeit und Hot-Module-Replacement verwendet wird \cite{vite2022docs}. Zur Sicherstellung der Codequalität und Einhaltung von Best Practices wird ESLint integriert, um den Code auf potenzielle Fehler und Stilabweichungen zu überprüfen \cite{eslint2022guide}. Dies gewährleistet eine konsistente und wartbare Codebasis während der gesamten Entwicklungsphase.
 
 \subsubsection*{Technische Grundlagen und Implementierung} 
 Das Frontend nutzt TypeScript, um durch statische Typisierung die Lesbarkeit und Wartbarkeit des Codes zu erhöhen. Weiterhin werden die folgenden Technologien und Bibliotheken verwendet: 
@@ -39,6 +38,27 @@ Das Frontend nutzt TypeScript, um durch statische Typisierung die Lesbarkeit und
 \subsubsection*{Prototyping und Benutzerzentrierung} 
 Für das Prototyping und die Abstimmung mit Stakeholdern wird Figma verwendet, um frühzeitig Feedback zur Benutzeroberfläche einzuholen und diese iterativ zu verbessern. Dieser Ansatz sichert eine benutzerzentrierte Entwicklung, die den Anforderungen der Zielgruppe entspricht.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.2\textwidth]{images/home.png}
+    \caption{Mockup der Hauptübersicht des Dashboards.}
+    \label{fig:mockup1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.2\textwidth]{images/radarchart.png}
+    \caption{Mockup der Visualisierung von Radarcharts.}
+    \label{fig:mockup2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.2\textwidth]{images/Zertifikat.png}
+    \caption{Mockup der Zertifkatsübersicht der Mitarbeiter}
+    \label{fig:mockup3}
+\end{figure}
+
 \subsubsection*{Entwicklungsprozesse und DevOps} 
 Das Projekt wird mittels Azure Pipelines in eine CI/CD-Pipeline integriert. Dies ermöglicht automatisierte Tests und Deployments des Frontends in verschiedene Umgebungen. Zudem wird Docker für die Containerisierung genutzt, um eine konsistente Entwicklungs- und Produktionsumgebung sicherzustellen.
 
@@ -51,6 +71,7 @@ Ein besonderer Fokus liegt auf der Entwicklung wiederverwendbarer UI-Komponenten
 \end{itemize}
 
 Durch den Einsatz dieser Technologien und Prinzipien bietet das Frontend eine hohe Benutzerfreundlichkeit, Performance und Skalierbarkeit, die den Anforderungen moderner HR-Tools gerecht wird.
+
 
 
 \subsection{Backend-Architektur}

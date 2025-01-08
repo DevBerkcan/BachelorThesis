@@ -2,27 +2,23 @@
 \label{chap:analysephase}
 
 \section{Anforderungen}
+Die Anforderungen an das geplante Tool wurden basierend auf Stakeholder-Interviews und einer Analyse bestehender Lösungen definiert. Dabei wurden sowohl funktionale als auch nicht-funktionale Anforderungen berücksichtigt, um eine effektive und skalierbare Lösung zu gewährleisten.
+
 \subsection{Funktionale Anforderungen}
-Das geplante Tool soll den spezifischen Anforderungen der Zielgruppe gerecht werden und folgende Funktionen umfassen:
+Das Tool soll folgende Hauptfunktionen bereitstellen:
 \begin{itemize}
-    \item \textbf{Visualisierung:} Darstellung der Gesprächsdaten als Donut- und Radarcharts. Diese Diagramme ermöglichen eine schnelle Erfassung von Trends und Leistungskennzahlen und sind besonders geeignet, um die Ergebnisse von Mitarbeitendengesprächen verständlich zu präsentieren \cite{kirk2016data, evergreen2016effective}.
-    \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/radarchart_apexcharts.png}
-    \caption{Framework Apexcharts für React}
-    \label{fig:hrworks_evalea_comparison}
-\end{figure}
-    \item \textbf{Datenmanagement:} Import, Speicherung und Bearbeitung von Gesprächsdaten. Diese Funktion gewährleistet eine strukturierte Datenverwaltung und unterstützt die Nachverfolgbarkeit vergangener Gespräche \cite{bryson2011employee}.
-    \item \textbf{Export:} Generierung von Berichten im Excel- und PDF-Format, die Führungskräfte für weitere Analysen oder Präsentationen nutzen können.
-    \item \textbf{Benutzerverwaltung:} Rollenspezifischer Zugriff (z. B. Admins, Führungskräfte), um sicherzustellen, dass nur berechtigte Personen auf sensible Daten zugreifen können \cite{duarte2012performance}.
+    \item \textbf{Visualisierung:} Interaktive Donut- und Radarcharts, die Trends und Leistungskennzahlen übersichtlich darstellen \cite{kirk2016data}.
+    \item \textbf{Datenmanagement:} Strukturierter Import, Speicherung und Bearbeitung von Gesprächsdaten, um Nachverfolgbarkeit und Konsistenz sicherzustellen \cite{bryson2011employee}.
+    \item \textbf{Export:} Erstellung von Berichten in Excel- und PDF-Formaten für Analysen und Präsentationen.
+    \item \textbf{Benutzerverwaltung:} Differenzierte Zugriffskontrollen basierend auf Rollen (z. B. Admins, Führungskräfte), um sensible Daten zu schützen \cite{duarte2012performance}.
 \end{itemize}
 
 \subsection{Nicht-funktionale Anforderungen}
-Neben den funktionalen Anforderungen sind nicht-funktionale Kriterien von entscheidender Bedeutung, um die Qualität und Effizienz des Tools sicherzustellen:
+Die Qualität und Effizienz des Tools sollen durch folgende Eigenschaften gewährleistet werden:
 \begin{itemize}
-    \item \textbf{Performance:} Schnelle Verarbeitung großer Datenmengen, um Wartezeiten zu minimieren.
-    \item \textbf{Skalierbarkeit:} Fähigkeit, sich an wachsende Nutzer- und Datenmengen anzupassen, insbesondere in großen Organisationen.
-    \item \textbf{Sicherheit:} Schutz sensibler Daten durch moderne Authentifizierungs- und Verschlüsselungsmethoden \cite{schober2008}.
+    \item \textbf{Performance:} Schnelle Verarbeitung großer Datenmengen ohne wahrnehmbare Verzögerungen.
+    \item \textbf{Skalierbarkeit:} Erweiterungskapazität für steigende Daten- und Nutzerzahlen.
+    \item \textbf{Sicherheit:} Verwendung moderner Authentifizierungs- und Verschlüsselungsmethoden zum Schutz sensibler Informationen \cite{schober2008}.
 \end{itemize}
 
 \begin{table}[h!]
@@ -32,49 +28,68 @@ Neben den funktionalen Anforderungen sind nicht-funktionale Kriterien von entsch
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Anforderung}              & \textbf{Beschreibung}                                                                                                   \\\hline
-Visualisierung                   & Donut- und Radarcharts zur Darstellung von Gesprächsdaten. \\\hline
+Visualisierung                   & Interaktive Donut- und Radarcharts zur Darstellung von Gesprächsdaten. \\\hline
 Datenmanagement                  & Strukturierter Import, Speicherung und Bearbeitung von Gesprächsdaten. \\\hline
 Export                           & Erstellung von Berichten im Excel- und PDF-Format. \\\hline
-Benutzerverwaltung               & Rollenspezifischer Zugriff auf Gesprächsdaten. \\\hline
+Benutzerverwaltung               & Differenzierte Zugriffsrechte basierend auf Rollen. \\\hline
 Performance                      & Schnelle Verarbeitung großer Datenmengen. \\\hline
-Skalierbarkeit                   & Anpassungsfähigkeit an wachsende Daten- und Nutzerzahlen. \\\hline
-Sicherheit                       & Schutz sensibler Daten durch Authentifizierung und Verschlüsselung. \\\hline
+Skalierbarkeit                   & Erweiterbarkeit bei steigender Nutzer- und Datenanzahl. \\\hline
+Sicherheit                       & Authentifizierung und Verschlüsselung sensibler Daten. \\\hline
 \end{tabularx}
 \end{table}
 
 \section{Stakeholder-Interviews und Umfragen}
 \subsection{Methodik}
-Zur Bedarfsanalyse wurden halbstrukturierte Interviews mit Führungskräften und HR-Managern durchgeführt. Ziel dieser Interviews war es, die spezifischen Anforderungen an das geplante Tool zu identifizieren. Die Methodik umfasste folgende Schritte:
+Die Bedarfsanalyse wurde durch halbstrukturierte Interviews mit Führungskräften und HR-Managern durchgeführt, um die spezifischen Anforderungen zu erfassen:
 \begin{itemize}
     \item \textbf{Teilnehmer:} Führungskräfte und HR-Manager aus verschiedenen Abteilungen.
-    \item \textbf{Interviewfragen:}
+    \item \textbf{Themen:}
     \begin{itemize}
-        \item Welche Daten benötigen Sie für Ihre Entscheidungsfindung?
-        \item Welche Herausforderungen bestehen bei der Nutzung bestehender Systeme?
-        \item Welche Funktionen wären essenziell für Ihre tägliche Arbeit?
+        \item Relevante Daten für Entscheidungsfindungen.
+        \item Herausforderungen bei bestehenden Tools.
+        \item Essenzielle Funktionen für die tägliche Arbeit.
     \end{itemize}
-    \item \textbf{Auswertung:} Qualitative Analyse der Antworten, um Muster und zentrale Anforderungen zu identifizieren.
+    \item \textbf{Auswertung:} Qualitative Analyse der Antworten zur Identifikation zentraler Anforderungen.
 \end{itemize}
 
 \subsection{Ergebnisse}
-Die Analyse der Interviews führte zu folgenden Erkenntnissen:
+Die Analyse der Interviews ergab folgende zentrale Anforderungen:
 \begin{itemize}
-    \item \textbf{Intuitive Diagramme:} Bedarf an einfachen Visualisierungen, die Trends und Muster in den Gesprächsdaten schnell erkennen lassen.
-    \item \textbf{Echtzeit-Updates:} Wunsch nach einer Benutzeroberfläche, die Daten in Echtzeit aktualisiert.
-    \item \textbf{Datensicherheit:} Hohe Anforderungen an die Vertraulichkeit und den Schutz sensibler Gesprächsdaten \cite{bryson2011employee}.
+    \item \textbf{Intuitive Diagramme:} Visualisierungen, die Trends und Muster schnell erkennbar machen.
+    \item \textbf{Echtzeit-Updates:} Dynamische Benutzeroberfläche mit aktuellen Daten.
+    \item \textbf{Datensicherheit:} Strikte Anforderungen an den Schutz sensibler Gesprächsdaten \cite{bryson2011employee}.
 \end{itemize}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/stakeholder_results.png}
-    \caption{Ergebnisse der Stakeholder-Analyse.}
-    \label{fig:stakeholder_results}
+    Die Abbildung illustriert die Häufigkeit, mit der 32 Mitarbeiter bestimmte Anforderungen während der Stakeholder-Interviews genannt haben. Dabei zeigt sich, dass Datensicherheit die höchste Priorität hatte, gefolgt von der Nachfrage nach Visualisierungen und Echtzeit-Updates. Diese Ergebnisse verdeutlichen die zentralen Schwerpunkte, die bei der Entwicklung des Tools berücksichtigt werden sollten.
+    
+    % Abbildung
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\textwidth,
+            height=0.5\textwidth,
+            ybar,
+            bar width=15pt,
+            ylabel={Häufigkeit der Erwähnung},
+            symbolic x coords={Visualisierungen, Echtzeit-Updates, Datensicherheit},
+            xtick=data,
+            x tick label style={font=\small, rotate=45, anchor=east},
+            ymin=0,
+            nodes near coords,
+            nodes near coords style={font=\small, anchor=mid},
+        ]
+        \addplot coordinates {(Visualisierungen,10) (Echtzeit-Updates,7) (Datensicherheit,15)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Häufigkeit genannter Anforderungen aus Stakeholder-Interviews.}
+    \label{fig:stakeholder_results_barchart}
 \end{figure}
+\newpage
 
 \section{Vergleich bestehender Lösungen}
-\subsection{Analyse bestehender Tools}
 \subsection{Vergleich von HRworks und Evalea}
-Die beiden Tools \textbf{HRworks} und \textbf{Evalea} wurden hinsichtlich ihrer Funktionen und Einsatzmöglichkeiten für Mitarbeitendengespräche analysiert.
+Die bestehenden Tools HRworks und Evalea wurden hinsichtlich ihrer Funktionen analysiert.
 
 \begin{table}[h!]
 \centering
@@ -83,16 +98,13 @@ Die beiden Tools \textbf{HRworks} und \textbf{Evalea} wurden hinsichtlich ihrer 
 \begin{tabularx}{\textwidth}{|X|X|X|}
 \hline
 \textbf{Kriterium}              & \textbf{HRworks}                                                                 & \textbf{Evalea}                                                                 \\\hline
-\textbf{Visualisierung}         & Keine spezialisierte Visualisierung für Mitarbeitendengespräche.                 & Umfangreiche Reporting-Funktionen mit individuellen Gesprächsleitfäden.         \\\hline
-\textbf{Datenmanagement}        & Verwaltung von Stammdaten, jedoch ohne spezifische Analysetools.                 & Strukturierte Verwaltung von Gesprächsdaten mit erweiterten Reporting-Optionen. \\\hline
-\textbf{Feedback}               & Bietet 360°-Feedback-Funktionen.                                                 & Unterstützung von Feedbackprozessen für verschiedene Anlässe.                   \\\hline
-\textbf{Benutzerfreundlichkeit} & Intuitive Benutzeroberfläche.                                                    & Flexibel anpassbare Gesprächsleitfäden.                                         \\\hline
-\textbf{Integration}            & Integration in allgemeine HR-Prozesse wie Zeiterfassung und Abwesenheitsmanagement. & Integration mit bestehenden Systemen und maßgeschneiderten Leitfäden.          \\\hline
+Visualisierung                  & Keine spezialisierte Visualisierung.                                            & Umfangreiche Reporting-Funktionen.                                             \\\hline
+Datenmanagement                 & Basis-Stammdatenverwaltung.                                                     & Strukturierte Verwaltung mit erweiterten Reporting-Optionen.                   \\\hline
+Feedback                        & 360°-Feedback-Funktionen.                                                      & Anpassbare Gesprächsleitfäden.                                                 \\\hline
+Benutzerfreundlichkeit          & Intuitive Bedienung.                                                           & Flexible Konfigurationsmöglichkeiten.                                          \\\hline
+Integration                     & Fokus auf allgemeine HR-Prozesse.                                              & Nahtlose Integration in bestehende Systeme.                                    \\\hline
 \end{tabularx}
 \end{table}
-
-\subsubsection{Zusammenfassung der Analyse}
-\textbf{HRworks} ist eine umfassende HR-Management-Lösung, die den administrativen Aufwand reduziert und Funktionen wie Terminvereinbarung und 360°-Feedback bietet. Jedoch fehlen spezialisierte Visualisierungen für Mitarbeitendengespräche. \textbf{Evalea} zeichnet sich durch eine starke Ausrichtung auf Mitarbeitendengespräche aus, mit flexiblen Leitfäden und umfangreichen Reporting-Funktionen.
 
 \begin{figure}[h!]
     \centering
@@ -128,8 +140,6 @@ Die beiden Tools \textbf{HRworks} und \textbf{Evalea} wurden hinsichtlich ihrer 
         \legend{HRworks, Evalea}
         \end{axis}
     \end{tikzpicture}
-    \caption{Visueller Vergleich zwischen HRworks und Evalea in verschiedenen Kategorien.}
+    \caption{Vergleich zwischen HRworks und Evalea in verschiedenen Kategorien.}
     \label{fig:hrworks_evalea_comparison}
 \end{figure}
-
-Die Analyse zeigt, dass beide Tools ihre Stärken haben, jedoch keines vollständig die Anforderungen an spezialisierte Mitarbeitendengesprächs-Reporting-Tools erfüllt. Das geplante Tool zielt darauf ab, diese Lücken zu schließen.
