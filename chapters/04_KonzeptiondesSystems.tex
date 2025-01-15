@@ -1,7 +1,6 @@
 \chapter{Konzeption des Systems}
 \label{chap:konzeption}
 
-\section{\"Uberblick}
 Die Konzeption des Systems bildet das Fundament für die spätere Implementierung und vereint moderne Technologien, um eine leistungsfähige und benutzerfreundliche Mitarbeitergesprächssoftware zu entwickeln. Im Zentrum der Konzeption stehen drei essenzielle Bereiche: das Design, die technischen Komponenten und die Datenarchitektur.
 
 Das System zielt darauf ab, durch die Kombination von Frontend-Technologien wie React und Vite mit einem effizienten Backend auf Basis von .NET Core eine skalierbare und zuverlässige Plattform zu schaffen \cite{kirk2016data, microsoftDotNet}. Ergänzt wird dies durch eine relationale Datenbankstruktur, die mit Azure SQL realisiert wird, um eine robuste und sichere Speicherung sowie Verarbeitung der Gesprächsdaten zu gewährleisten \cite{azureDocumentation}.
@@ -10,178 +9,59 @@ Ein besonderer Fokus liegt auf der Interoperabilität mit bestehenden HR-Infrast
 
 Diese Konzeption stellt sicher, dass die verschiedenen Komponenten des Systems harmonisch zusammenwirken, um den Anforderungen moderner Arbeitsumgebungen gerecht zu werden und gleichzeitig die Grundlage für eine zukunftssichere Weiterentwicklung zu schaffen.
 
+\section{Frontend-Architektur}
+Das Frontend des Systems wird mit React und Vite geplant, um eine hohe Performance und schnelle Entwicklungszyklen zu gewährleisten. React dient als Kerntechnologie für die komponentenbasierte Architektur \cite{facebook2021react}, während Vite als moderner Build-Toolchain für eine optimale Ladezeit und Hot-Module-Replacement vorgesehen ist \cite{vite2022docs}. Zur Sicherstellung der Codequalität und Einhaltung von Best Practices wird ESLint integriert, um den Code auf potenzielle Fehler und Stilabweichungen zu überprüfen \cite{eslint2022guide}. Dies gewährleistet eine konsistente und wartbare Codebasis während der gesamten Entwicklungsphase.
 
-\section{Systemarchitektur}
-Die Systemarchitektur basiert auf einem klassischen Client-Server-Modell, das eine klare Trennung zwischen der Benutzeroberfläche und den serverseitigen Prozessen gewährleistet. Diese Architektur erlaubt eine modulare und skalierbare Entwicklung, die sowohl Benutzerfreundlichkeit als auch Systemeffizienz priorisiert.
+\subsubsection*{Technische Grundlagen und Implementierung}
+Das Frontend wird mit TypeScript geplant, um durch statische Typisierung die Lesbarkeit und Wartbarkeit des Codes zu erhöhen. Die Wahl der Technologien und Bibliotheken erfolgt gezielt, um die spezifischen Anforderungen des Projekts hinsichtlich Skalierbarkeit, Sicherheit und Benutzerfreundlichkeit zu erfüllen.
 
-Das Frontend wird mit React entwickelt, einer modernen JavaScript-Bibliothek, die durch ihre komponentenbasierte Struktur eine effiziente Erstellung und Wiederverwendbarkeit von Benutzeroberflächen ermöglicht \cite{stefanov2021react}. Um die Entwicklungszeit zu verkürzen und eine optimale Performance zu gewährleisten, wird Vite als Build-Tool eingesetzt. Die visuelle Darstellung von Daten wird durch Bibliotheken wie ApexCharts unterstützt, die interaktive und ansprechende Diagramme ermöglichen \cite{apexchartsDoc}.
+HTML bildet die Grundlage für die Strukturierung der Inhalte auf der Benutzeroberfläche, da es eine bewährte Basis für moderne Frameworks wie React bietet. React und react-dom werden für ihre komponentenbasierte Architektur gewählt, die eine effiziente Wiederverwendbarkeit von UI-Elementen ermöglicht \cite{facebook2021react}. 
 
-Das Backend wird mit .NET Core realisiert, einem plattformunabhängigen Framework, das sich durch hohe Performance und Flexibilität auszeichnet \cite{microsoftDotNet}. Es stellt RESTful APIs bereit, die die Kommunikation zwischen Frontend und Backend ermöglichen, und verwendet Azure-Dienste wie den Azure Service Bus für die Integration von asynchronen Prozessen \cite{azureServiceBus}. Azure Active Directory wird für die sichere Authentifizierung der Benutzer eingesetzt, während MS SQL eine robuste Datenbanklösung für die Speicherung und Verarbeitung von Daten bereitstellt \cite{azureDocumentation}.
-
-Durch die Kombination dieser Technologien wird sichergestellt, dass das System eine hohe Skalierbarkeit, Stabilität und nahtlose Integration in bestehende Infrastrukturen bietet. Diese modulare Architektur unterstützt eine schnelle Weiterentwicklung und Anpassung an zukünftige Anforderungen.
-
-
-\subsection{Frontend-Architektur}
-Das Frontend des Systems wird mit React und Vite entwickelt, um eine hohe Performance und schnelle Entwicklungszyklen zu gewährleisten. React dient als Kerntechnologie für die komponentenbasierte Architektur \cite{facebook2021react}, während Vite als moderner Build-Toolchain für eine optimale Ladezeit und Hot-Module-Replacement verwendet wird \cite{vite2022docs}. Zur Sicherstellung der Codequalität und Einhaltung von Best Practices wird ESLint integriert, um den Code auf potenzielle Fehler und Stilabweichungen zu überprüfen \cite{eslint2022guide}. Dies gewährleistet eine konsistente und wartbare Codebasis während der gesamten Entwicklungsphase.
-
-\subsubsection*{Technische Grundlagen und Implementierung} 
-Das Frontend nutzt TypeScript, um durch statische Typisierung die Lesbarkeit und Wartbarkeit des Codes zu erhöhen. Weiterhin werden die folgenden Technologien und Bibliotheken verwendet: 
-\begin{itemize}
-    \item \textbf{@azure/msal-browser und @azure/msal-react:} Zur sicheren Benutzer-Authentifizierung über Azure Active Directory und nahtlosen Integration in die Azure-Dienste.
-    \item \textbf{@reduxjs/toolkit und Zustand:} Für ein effizientes State-Management, das die Synchronisierung von Benutzerinteraktionen und Daten sicherstellt.
-    \item \textbf{Primereact und Fluent UI:} Für die Erstellung moderner und zugänglicher Benutzeroberflächen-Komponenten.
-    \item \textbf{Axios:} Für die Kommunikation mit den RESTful-APIs des Backends.
-    \item \textbf{Apexcharts und React-Apexcharts:} Zur Datenvisualisierung, insbesondere für Donut- und Radarcharts, die zur Darstellung von Mitarbeitendengesprächsdaten genutzt werden.
-    \item \textbf{CSS-Module-Plugins:} Um die Modularität und Wiederverwendbarkeit von Stilen sicherzustellen.
-\end{itemize}
+Für das State-Management werden Redux Toolkit und Zustand evaluiert. Redux Toolkit wird für komplexere Datenflüsse verwendet, während Zustand aufgrund seiner Einfachheit für fokussierte Zustände gewählt wird. Zur Darstellung von Daten wird die Bibliothek ApexCharts geplant, da sie interaktive Diagramme wie Donut- und Radarcharts unterstützt \cite{apexchartsDoc}. 
 
 \subsubsection*{Prototyping und Benutzerzentrierung} 
-Für das Prototyping und die Abstimmung mit Stakeholdern wird Figma verwendet, um frühzeitig Feedback zur Benutzeroberfläche einzuholen und diese iterativ zu verbessern. Dieser Ansatz sichert eine benutzerzentrierte Entwicklung, die den Anforderungen der Zielgruppe entspricht.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1.2\textwidth]{images/home.png}
-    \caption{Mockup der Hauptübersicht des Dashboards.}
-    \label{fig:mockup1}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1.2\textwidth]{images/radarchart.png}
-    \caption{Mockup der Visualisierung von Radarcharts.}
-    \label{fig:mockup2}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1.2\textwidth]{images/Zertifikat.png}
-    \caption{Mockup der Zertifkatsübersicht der Mitarbeiter}
-    \label{fig:mockup3}
-\end{figure}
+Für das Prototyping wird Figma verwendet, um frühzeitig Feedback zur Benutzeroberfläche einzuholen und diese iterativ zu verbessern. Dieser Ansatz sichert eine benutzerzentrierte Entwicklung, die den Anforderungen der Zielgruppe entspricht.
 
 \subsubsection*{Entwicklungsprozesse und DevOps} 
 Das Projekt wird mittels Azure Pipelines in eine CI/CD-Pipeline integriert. Dies ermöglicht automatisierte Tests und Deployments des Frontends in verschiedene Umgebungen. Zudem wird Docker für die Containerisierung genutzt, um eine konsistente Entwicklungs- und Produktionsumgebung sicherzustellen.
 
-\subsubsection*{Abstimmung von Komponenten und Workflows} 
-Ein besonderer Fokus liegt auf der Entwicklung wiederverwendbarer UI-Komponenten, die für verschiedene Anwendungsfälle angepasst werden können. Hierzu zählen insbesondere: 
-\begin{itemize}
-    \item Visualisierungskomponenten wie Donut- und Radarcharts für die Datenanalyse.
-    \item Formulare und Interaktionskomponenten, die eine intuitive Dateneingabe und Navigation ermöglichen.
-    \item Dashboards, die eine zentrale Übersicht über die analysierten Daten bieten.
-\end{itemize}
-
-Durch den Einsatz dieser Technologien und Prinzipien bietet das Frontend eine hohe Benutzerfreundlichkeit, Performance und Skalierbarkeit, die den Anforderungen moderner HR-Tools gerecht wird.
-
-
-
-\subsection{Backend-Architektur}
-
-Das Backend des Systems wird mit .NET Core entwickelt, um eine robuste und skalierbare Grundlage für die Verarbeitung und Speicherung der Daten zu gewährleisten. Es umfasst mehrere zentrale Dienste und Technologien, die zusammen eine effiziente und sichere Systemarchitektur ermöglichen.\cite{azureArchitecture2024}
+\section{Backend-Architektur}
+Die Backend-Architektur stellt eine zentrale Komponente in der Planungsphase des Systems dar und soll eine robuste und skalierbare Grundlage für die Verarbeitung und Speicherung der Daten bieten. Verschiedene Technologien und Ansätze wurden evaluiert, um die effizienteste Lösung für die Anforderungen des Projekts zu identifizieren.
 
 \subsubsection*{Zentrale Dienste und Technologien}
-Das Backend basiert auf einer modularen Architektur und integriert die folgenden Komponenten:
-\begin{itemize}
-    \item \textbf{Azure Service Bus:} Wird für die Verarbeitung und Synchronisation von Nachrichten zwischen den verschiedenen Systemkomponenten eingesetzt. Diese Technologie ermöglicht die asynchrone Kommunikation und trägt zur Skalierbarkeit des Systems bei \cite{azureServiceBus2024}.
+Die geplante Backend-Architektur basiert auf einer modularen Struktur, die mehrere essenzielle Dienste und Technologien integriert. Der Azure Service Bus wird für die Verarbeitung und Synchronisation von Nachrichten zwischen den verschiedenen Systemkomponenten vorgesehen. Das Publish-Subscribe-Muster reduziert die Kopplung zwischen Systemkomponenten und ermöglicht eine flexible Integration neuer Komponenten sowie eine hohe Skalierbarkeit \cite{azureServiceBus2024}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{images/Azure (2019) framework - Page 1.png}
-    \caption{Architektur des Azure Service Bus im Publish-Subscribe-Pattern.}
-    \label{fig:azure_bus_architecture}
-\end{figure}
-
-Das Publish-Subscribe-Muster, wie in Abbildung~\ref{fig:azure_bus_architecture} dargestellt, reduziert die Kopplung zwischen Systemkomponenten, da Nachrichten gezielt über Topics an registrierte Subskriptionen verteilt werden können. Dies ermöglicht nicht nur eine bessere Skalierbarkeit, sondern auch die flexible Integration neuer Komponenten ohne Änderungen an bestehenden Systemteilen.
-
-
-    \item \textbf{DBContext:} Entity Framework Core wird für den Datenbankzugriff verwendet, wodurch eine einfache Verwaltung und Abfrage der relationalen Datenbank ermöglicht wird.\cite{entityFrameworkCore2020}
-    \item \textbf{Hintergrundjobs:} Automatisierte Aufgaben wie das Verarbeiten von Berichten, das Versenden von Benachrichtigungen oder das Berechnen aggregierter Daten werden über geplante Hintergrundprozesse realisiert.\cite{backgroundTasks2017}
-    \item \textbf{RESTful APIs:} Das Backend stellt definierte Endpunkte für die Kommunikation mit dem Frontend bereit, um den sicheren und effizienten Austausch von Daten zu gewährleisten \cite{microsoftDotNet}.
-\end{itemize}
+Für den Datenbankzugriff wird Entity Framework Core evaluiert, das im Vergleich zu Tools wie Dapper eine höhere Abstraktionsebene und nahtlose Integration mit .NET Core bietet \cite{entityFrameworkCore2020}. Zusätzlich werden Hintergrundjobs für automatisierte Aufgaben wie das Versenden von Benachrichtigungen oder das Berechnen aggregierter Daten entworfen \cite{backgroundTasks2017}.
 
 \subsubsection*{Technologien und Abhängigkeiten}
-Das Backend verwendet moderne Technologien und Bibliotheken, um die Anforderungen an Sicherheit, Performance und Skalierbarkeit zu erfüllen. Zu den zentralen Abhängigkeiten zählen:
-\begin{itemize}
-    \item \textbf{AutoMapper:} Für die Abbildung von Datenmodellen und DTOs (Data Transfer Objects), was die Wartbarkeit und Lesbarkeit des Codes verbessert.\cite{automapperDocs2024}.
-    \item \textbf{MassTransit und MassTransit.Azure.ServiceBus.Core:} Diese Bibliotheken ermöglichen die Implementierung von Messaging-Lösungen und die Integration mit Azure Service Bus.\cite{masstransit2021}.
-    \item \textbf{Microsoft.AspNetCore.Authentication.JwtBearer:} Für die Authentifizierung und Autorisierung von Benutzern mithilfe von JSON Web Tokens (JWT).\cite{jwtAuthDocs2024}.
-    \item \textbf{Microsoft.EntityFrameworkCore:} Für die datenbankseitige Verarbeitung, einschließlich Unterstützung für SQL Server.\cite{efCoreDocs2024}.
-    \item \textbf{Microsoft.AspNet.OData und Microsoft.AspNetCore.OData:} Zur Unterstützung von OData-Abfragen, die flexible Datenabfragen ermöglichen.\cite{odata2022}.
-\end{itemize}
+Zu den geplanten Abhängigkeiten zählen:
+- AutoMapper für die Abbildung von Datenmodellen \cite{automapperDocs2024}.
+- MassTransit und MassTransit.Azure.ServiceBus.Core für Messaging-Lösungen \cite{masstransit2021}.
+- Microsoft.Identity.Web zur Integration von Azure Active Directory.
 
-\subsection{Integration mit Microsoft Services}
+Durch diese sorgfältige Planung wird eine flexible, sichere und skalierbare Backend-Architektur geschaffen.
 
-Das Backend ist tief in die Microsoft Azure-Infrastruktur integriert, um maximale Effizienz und Sicherheit zu gewährleisten:
-\begin{itemize}
-    \item \textbf{Azure Active Directory (AAD):} Ermöglicht die sichere Authentifizierung der Benutzer und die Integration mit anderen Azure-Diensten.\cite{azureAD2021}.
-    \item \textbf{Microsoft Graph API:} Unterstützt die Abfrage von Benutzer- und Organisationsdaten, um die Integration in bestehende HR-Systeme zu erleichtern.\cite{microsoftGraph2020}.
-    \item \textbf{Azure Pipelines:} Wird für Continuous Integration und Continuous Deployment (CI/CD) verwendet, wodurch der Entwicklungs- und Bereitstellungsprozess automatisiert wird.\cite{azurePipelines2021}.
-\end{itemize}
-
-\subsection{Datenbankdesign}
-
-Die Datenbank ist das Rückgrat des Systems und basiert auf einer relationalen Struktur, die mit Microsoft SQL Server realisiert wird.
-
-Die Struktur der Datenbank ist darauf ausgelegt, eine effiziente Speicherung und Verarbeitung großer Datenmengen zu ermöglichen. Zusätzlich wird die Datenbank über Entity Framework Core angebunden, um eine einfache Interaktion mit der Anwendungsschicht zu gewährleisten.
+\section{Datenbankdesign}
+Die Konzeption der Datenbank ist ein zentraler Bestandteil der Systemplanung, da sie das Rückgrat für die Speicherung und Verarbeitung großer Datenmengen bildet. Nach der Prüfung von PostgreSQL und MySQL fiel die Entscheidung auf Microsoft SQL Server, da es eine nahtlose Integration mit Azure-Diensten und umfangreiche Sicherheitsfunktionen bietet.
 
 \subsubsection*{Sicherheitsmaßnahmen}
-Die Datenbank ist vollständig verschlüsselt, und der Zugriff erfolgt ausschließlich über authentifizierte und autorisierte Kanäle. Rollenspezifische Zugriffsrechte stellen sicher, dass sensible Daten nur von berechtigten Benutzern eingesehen und bearbeitet werden können.
-\cite{liu2021security}
-\subsubsection*{Zusammenfassung}
-Das Backend bildet die Grundlage für die datenbasierte Analyse und Visualisierung von Mitarbeitendengesprächsdaten. Durch die Integration moderner Technologien und Sicherheitsmechanismen stellt es eine performante, skalierbare und sichere Lösung für die Anforderungen des Systems dar.\cite{microsoft2020azure}
-
+Die Datenbank soll durch Verschlüsselung und rollenspezifische Zugriffsrechte geschützt werden, um Datenschutzrichtlinien wie die DSGVO zu erfüllen \cite{liu2021security}.
 
 \subsection{Datenbankstruktur}
-\begin{itemize}
-    \item \textbf{EmployeeAppraisalData:} Speichert die Stammdaten der Mitarbeitenden, einschlie\ss lich Name, Microsoft-ID und Jobtitel.
-    \item \textbf{EmployeeAppraisal:} Enth\"alt die Informationen zu den einzelnen Mitarbeitendengespr\"achen, wie das Datum und die beteiligten Personen.
-    \item \textbf{AppraisalGroup, AppraisalSubgroup, AppraisalQuestion:} Diese Tabellen strukturieren die Fragen und Gruppierungen innerhalb eines Mitarbeitendengespr\"achs.
-    \item \textbf{AppraisalStatus:} Verfolgt den Status eines Gespr\"achs, z. B. \glqq In Bearbeitung\grqq{} oder \glqq Abgeschlossen\grqq{}.
-\end{itemize}
-
-\begin{table}[h!]
-\centering
-\caption{Zusammenfassung der wichtigsten Datenbanktabellen}
-\label{tab:db_overview}
-\begin{tabularx}{\textwidth}{|X|X|}
-\hline
-\textbf{Tabelle} & \textbf{Beschreibung} \\\hline
-EmployeeAppraisalData & Speichert Stammdaten der Mitarbeitenden. \\\hline
-EmployeeAppraisal & Enth\"alt Informationen zu Mitarbeitendengespr\"achen. \\\hline
-AppraisalGroup & Gruppiert verschiedene Fragen innerhalb eines Gespr\"achs. \\\hline
-AppraisalSubgroup & Unterteilt die Gruppen in spezifischere Themenbereiche. \\\hline
-AppraisalQuestion & Speichert die Fragen eines Gespr\"achs. \\\hline
-AppraisalStatus & Dokumentiert den aktuellen Status eines Gespr\"achs. \\\hline
-\end{tabularx}
-\end{table}
+Die geplante Datenbankstruktur umfasst Tabellen wie \textbf{EmployeeAppraisal} für Gesprächsdaten und \textbf{AppraisalGroup} für Gruppierungen. Ziel ist eine klare Organisation und Vermeidung redundanter Daten.
 
 \subsection{Beziehungsmodell}
-Die Datenbank ist relational aufgebaut, um eine effiziente Speicherung und Abfrage von Daten zu gew\"ahrleisten. Abbildung \ref{fig:db_er_model} zeigt das ER-Diagramm des Systems.
+Die geplante Datenbank folgt einem relationalen Modell, das effiziente Abfragen ermöglicht. Abbildung \ref{fig:db_er_model} zeigt das ER-Diagramm der geplanten Datenbankstruktur.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\textwidth]{images/er_modell_design.png}
-    \caption{ER-Diagramm der Datenbankstruktur.}
+    \caption{ER-Diagramm der geplanten Datenbankstruktur.}
     \label{fig:db_er_model}
 \end{figure}
 
 \section{Workflows}
-Die Konzeption des Systems umfasst klar definierte Workflows, um eine reibungslose Funktionalität und Effizienz sicherzustellen:
-\begin{itemize}
-    \item \textbf{Datenimport:} Mitarbeitendengesprächsdaten werden über das Backend in die relationale Datenbank importiert. Hierbei wird eine automatische Validierung der Eingabedaten durchgeführt, um die Datenqualität sicherzustellen \cite{gupta2020data, prat2021pipeline}.
-    \item \textbf{Datenverarbeitung:} Geplante Hintergrundjobs übernehmen Aufgaben wie die Berechnung aggregierter Statistiken, das Generieren von Berichten oder das Versenden von Benachrichtigungen an berechtigte Benutzer \cite{hollingsworth2020workflow, apache2023workflow}.
-    \item \textbf{Visualisierung:} Die aufbereiteten Daten werden über definierte RESTful APIs an das Frontend übermittelt, wo sie durch interaktive Diagramme wie Donut- und Radarcharts anschaulich dargestellt werden \cite{kirk2016data, evergreen2016effective}.
-\end{itemize}
-
+Für die Nachrichtenverarbeitung wird der Azure Service Bus evaluiert, während für geplante Hintergrundjobs Hangfire als bevorzugte Lösung vorgesehen ist. Ziel ist eine flexible und skalierbare Systemkommunikation.
 
 \section{Sicherheitskonzepte}
-Die Sicherheit des Systems wird durch mehrere bewährte Maßnahmen gewährleistet, um Datenintegrität und Vertraulichkeit sicherzustellen:
-\begin{itemize}
-    \item \textbf{Authentifizierung:} Benutzer authentifizieren sich über Azure Active Directory (AAD), das Multi-Faktor-Authentifizierung (MFA) und Single Sign-On (SSO) unterstützt \cite{microsoftAAD}.
-    \item \textbf{Datenverschlüsselung:} Alle sensiblen Daten, sowohl im Ruhezustand als auch während der Übertragung, werden durch moderne Verschlüsselungsmethoden wie SHA geschützt \cite{schneier2015applied}.
-    \item \textbf{Rechteverwaltung:} Eine fein granulierte, rollenspezifische Zugriffskontrolle (RBAC) stellt sicher, dass nur autorisierte Benutzer auf spezifische Daten und Funktionen zugreifen können \cite{ferraiolo2003rbac}.
-\end{itemize}
-
-
-\section{Zusammenfassung}
-Die vorgestellte Konzeption kombiniert innovative Technologien, effiziente Workflows und umfassende Sicherheitsmaßnahmen, um eine performante und skalierbare Lösung für die Verwaltung und Visualisierung von Mitarbeitendengesprächsdaten zu gewährleisten. Durch den gezielten Einsatz moderner Entwicklungs- und Sicherheitsstandards wird eine benutzerfreundliche und zuverlässige Plattform geschaffen, die den Anforderungen sowohl auf technischer als auch auf organisatorischer Ebene gerecht wird.
-
+Die Sicherheit des Systems wird durch Maßnahmen wie JWT-Authentifizierung, Verschlüsselung und rollenspezifische Zugriffskontrollen gewährleistet. Diese Sicherheitsmaßnahmen sollen die Integrität und Vertraulichkeit der Daten sicherstellen und den Anforderungen an moderne Unternehmensanwendungen gerecht werden.

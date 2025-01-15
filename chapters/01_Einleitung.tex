@@ -1,40 +1,15 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
 
-\section{Motivation}
-Die Qualität und Effizienz von Mitarbeitendengesprächen sind essenziell für den Erfolg eines Unternehmens. Solche Gespräche schaffen nicht nur eine Plattform für Feedback und Leistungsbewertungen, sondern auch für die gemeinsame Festlegung von Zielen und die Planung individueller Entwicklungsmöglichkeiten. Regelmäßig durchgeführte Mitarbeitendengespräche tragen dazu bei, die Mitarbeiterbindung zu erhöhen und die Produktivität zu steigern, indem sie die strategischen Unternehmensziele mit den individuellen Bedürfnissen der Mitarbeitenden verbinden \cite{schober2008, bryson2011employee}.
+Die Qualität und Effizienz von Mitarbeitendengesprächen sind essenziell für den Erfolg eines Unternehmens. Solche Gespräche schaffen eine Plattform für Feedback, Leistungsbewertungen, die gemeinsame Festlegung von Zielen und die Planung individueller Entwicklungsmöglichkeiten. Regelmäßig durchgeführte Gespräche tragen nicht nur zur Stärkung der Mitarbeiterbindung bei, sondern fördern auch die Produktivität und die strategische Ausrichtung des Unternehmens, indem sie die Ziele der Organisation mit den Bedürfnissen der Mitarbeitenden in Einklang bringen \cite{schober2008, bryson2011employee}.
 
-In einer zunehmend datengetriebenen Welt hat die Fähigkeit, große Datenmengen zu analysieren und in konkrete Maßnahmen umzusetzen, an Bedeutung gewonnen. Mitarbeitendengespräche, deren Ergebnisse oft unstrukturiert vorliegen, bleiben jedoch häufig ungenutzt. Dies führt dazu, dass Unternehmen wichtige Erkenntnisse über die Leistung und Entwicklung ihrer Mitarbeitenden nicht systematisch erfassen und nutzen können \cite{kirk2016data}. 
+In einer zunehmend datengetriebenen Welt wird es immer wichtiger, große Datenmengen nicht nur zu sammeln, sondern auch sinnvoll zu nutzen. Gerade im Bereich Human Resources (HR) bleiben die Ergebnisse von Mitarbeitendengesprächen oft ungenutzt, da sie in unstrukturierter Form vorliegen. Dadurch entgehen Unternehmen wertvolle Einblicke, die zur Förderung der Mitarbeitendenentwicklung und zur Optimierung von HR-Strategien beitragen könnten \cite{kirk2016data}. Der Einsatz moderner Visualisierungstools bietet hier eine Lösung, indem er die Darstellung und Analyse solcher Daten erleichtert und datenbasierte Entscheidungen unterstützt. 
 
-Wie Kirk \cite{kirk2016data} betont, können visuelle Darstellungen dazu beitragen, komplexe Daten zugänglich zu machen und fundierte Entscheidungen zu erleichtern. Interaktive Dashboards bieten Führungskräften und HR-Abteilungen eine intuitive Möglichkeit, datenbasierte Einblicke zu gewinnen und Trends zu erkennen. Solche Werkzeuge fördern nicht nur die Transparenz, sondern auch die Effektivität von HR-Prozessen \cite{evergreen2016effective}.
+Diese Arbeit wurde in Zusammenarbeit mit der Realcore Group entwickelt, einem führenden IT-Dienstleister, der sich auf innovative Lösungen für die Optimierung interner Prozesse spezialisiert hat. Ziel der Arbeit ist es, ein modernes und benutzerfreundliches Reporting-Tool zu entwickeln, das speziell für die Analyse und Visualisierung von Daten aus Mitarbeitendengesprächen konzipiert ist. Dabei werden technologische Ansätze wie React, .NET Core und Microsoft Azure eingesetzt, um eine flexible, skalierbare und sichere Plattform zu schaffen.
 
-\section{Problemstellung}
-Viele Unternehmen stehen vor der Herausforderung, Mitarbeitendengesprächsdaten effizient zu nutzen. Diese Probleme lassen sich in drei Hauptaspekte unterteilen:
-\begin{itemize}
-    \item \textbf{Unstrukturierte Daten:} Mitarbeitendengesprächsdaten werden oft in Tabellen oder Textdokumenten gespeichert, was ihre systematische Analyse erschwert \cite{duarte2012performance}.
-    \item \textbf{Fragmentierte Datenspeicherung:} Daten werden häufig ohne klare Struktur oder Integration in bestehende HR-Systeme erfasst, was zu Redundanzen und Fehlern führen kann \cite{bryson2011employee}.
-    \item \textbf{Fehlende Visualisierung:} Es fehlen geeignete Tools, um Gesprächsdaten ansprechend und interaktiv darzustellen, was die Interpretation und Kommunikation der Ergebnisse erschwert \cite{ware2012information}.
-\end{itemize}
+Die zentralen Herausforderungen liegen in der effizienten Verarbeitung von Mitarbeitendengesprächsdaten, die oft in fragmentierter oder unstrukturierter Form vorliegen. Ziel ist es, diese Daten zu organisieren und durch interaktive Visualisierungen wie Donut-Diagramme und Radarcharts zugänglich zu machen, um Führungskräfte und HR-Abteilungen bei der Entscheidungsfindung zu unterstützen \cite{kirk2016data, evergreen2016effective}.
 
-Diese Defizite behindern datenbasierte Entscheidungsprozesse und schränken die Möglichkeiten zur Optimierung von HR-Strategien erheblich ein. Die manuelle Datenverarbeitung ist nicht nur zeitaufwändig, sondern auch anfällig für Fehler, was die Qualität der Analysen weiter beeinträchtigt.
+Die vorliegende Arbeit gliedert sich wie folgt: 
+In Kapitel 2 werden die theoretischen Grundlagen vorgestellt, die die Bedeutung von Mitarbeitendengesprächen, die Rolle der Datenvisualisierung und die eingesetzten Technologien umfassen. Kapitel 3 widmet sich der Analyse der Anforderungen durch Stakeholder-Interviews und einen Vergleich bestehender Lösungen. Die Konzeption des Systems, einschließlich der Systemarchitektur, des Datenmodells und der Sicherheitsmaßnahmen, wird in Kapitel 4 beschrieben. Kapitel 5 behandelt die technische Implementierung, wobei auf Herausforderungen und deren Lösungen eingegangen wird. In Kapitel 6 wird das System evaluiert, indem Funktionstests und Usability-Analysen durchgeführt werden. Abschließend fasst Kapitel 7 die Ergebnisse zusammen und gibt einen Ausblick auf mögliche Weiterentwicklungen.
 
-\section{Zielsetzung}
-Das Ziel dieser Arbeit ist die Entwicklung eines skalierbaren und benutzerfreundlichen Reporting-Tools zur Erfassung, Speicherung und Visualisierung von Mitarbeitendengesprächsdaten. Das Tool soll folgende Kernfunktionen bieten:
-\begin{itemize}
-    \item \textbf{Interaktive Visualisierung:} Donut-Diagramme und Radarcharts sollen Führungskräften und HR-Abteilungen eine intuitive Analyse der Daten ermöglichen \cite{kirk2016data, evergreen2016effective}.
-    \item \textbf{Datenverwaltung:} Die Gesprächsdaten sollen in einer relationalen Datenbank strukturiert gespeichert und einfach abrufbar sein \cite{azureDocumentation}.
-    \item \textbf{Skalierbarkeit:} Das System soll mit wachsenden Datenmengen und sich ändernden Anforderungen flexibel umgehen können \cite{microsoftAzure}.
-\end{itemize}
-
-Dieses Tool soll nicht nur die Effizienz der Mitarbeitendengespräche steigern, sondern auch datenbasierte Entscheidungen fördern und so zur strategischen Ausrichtung des Unternehmens beitragen.
-
-\section{Aufbau der Arbeit}
-Die Arbeit gliedert sich wie folgt:
-\begin{itemize}
-    \item \textbf{Kapitel 2:} Präsentiert die theoretischen Grundlagen, darunter die Bedeutung von Mitarbeitendengesprächen, die Relevanz von Datenvisualisierung und die eingesetzten Technologien.
-    \item \textbf{Kapitel 3:} Analysiert die Anforderungen an das System durch Stakeholder-Interviews und den Vergleich bestehender Lösungen.
-    \item \textbf{Kapitel 4:} Beschreibt die Konzeption des Systems, einschließlich der Architektur, des Datenmodells und der Sicherheitskonzepte.
-    \item \textbf{Kapitel 5:} Erläutert die technische Implementierung, Herausforderungen und Lösungen.
-    \item \textbf{Kapitel 6:} Evaluiert das Tool anhand von Funktionalitäts- und Usability-Tests.
-    \item \textbf{Kapitel 7:} Fasst die Ergebnisse zusammen und gibt einen Ausblick auf Weiterentwicklungen.
-\end{itemize}
+Diese Arbeit soll nicht nur zur Effizienzsteigerung von Mitarbeitendengesprächen beitragen, sondern auch zeigen, wie datenbasierte Ansätze die strategische Ausrichtung und Entscheidungsfindung in Unternehmen nachhaltig unterstützen können.

@@ -1,56 +1,19 @@
 \chapter{Analysephase}
 \label{chap:analysephase}
 
+Die Anforderungen an das geplante Tool wurden auf Basis von Stakeholder-Interviews und einer Analyse bestehender Lösungen definiert. Ziel war es, eine effektive, skalierbare und benutzerfreundliche Lösung zu entwerfen, die den spezifischen Anforderungen von Führungskräften und HR-Managern entspricht.
+
 \section{Anforderungen}
-Die Anforderungen an das geplante Tool wurden basierend auf Stakeholder-Interviews und einer Analyse bestehender Lösungen definiert. Dabei wurden sowohl funktionale als auch nicht-funktionale Anforderungen berücksichtigt, um eine effektive und skalierbare Lösung zu gewährleisten.
+Um die Funktionalität und Effizienz des Systems sicherzustellen, wurden sowohl funktionale als auch nicht-funktionale Anforderungen formuliert. Die funktionalen Anforderungen umfassen Kernfunktionen wie interaktive Visualisierungen, Datenmanagement und Benutzerverwaltung, während nicht-funktionale Anforderungen Aspekte wie Sicherheit, Performance und Skalierbarkeit adressieren.
 
-\subsection{Funktionale Anforderungen}
-Das Tool soll folgende Hauptfunktionen bereitstellen:
-\begin{itemize}
-    \item \textbf{Visualisierung:} Interaktive Donut- und Radarcharts, die Trends und Leistungskennzahlen übersichtlich darstellen \cite{kirk2016data}.
-    \item \textbf{Datenmanagement:} Strukturierter Import, Speicherung und Bearbeitung von Gesprächsdaten, um Nachverfolgbarkeit und Konsistenz sicherzustellen \cite{bryson2011employee}.
-    \item \textbf{Export:} Erstellung von Berichten in Excel- und PDF-Formaten für Analysen und Präsentationen.
-    \item \textbf{Benutzerverwaltung:} Differenzierte Zugriffskontrollen basierend auf Rollen (z. B. Admins, Führungskräfte), um sensible Daten zu schützen \cite{duarte2012performance}.
-\end{itemize}
+Das System soll die Visualisierung von Daten durch interaktive Donut- und Radarcharts ermöglichen, um Trends und Leistungskennzahlen übersichtlich darzustellen \cite{kirk2016data}. Gleichzeitig soll ein strukturiertes Datenmanagement den Import, die Speicherung und die Bearbeitung von Gesprächsdaten sicherstellen, um Nachverfolgbarkeit und Konsistenz zu gewährleisten \cite{bryson2011employee}. Zusätzlich wird ein Exportmodul benötigt, um Berichte in Formaten wie Excel und PDF für weiterführende Analysen bereitzustellen. Die Benutzerverwaltung des Tools ermöglicht differenzierte Zugriffskontrollen, die sensible Daten schützen und rollenbasierten Zugriff gewährleisten \cite{duarte2012performance}.
 
-\subsection{Nicht-funktionale Anforderungen}
-Die Qualität und Effizienz des Tools sollen durch folgende Eigenschaften gewährleistet werden:
-\begin{itemize}
-    \item \textbf{Performance:} Schnelle Verarbeitung großer Datenmengen ohne wahrnehmbare Verzögerungen.
-    \item \textbf{Skalierbarkeit:} Erweiterungskapazität für steigende Daten- und Nutzerzahlen.
-    \item \textbf{Sicherheit:} Verwendung moderner Authentifizierungs- und Verschlüsselungsmethoden zum Schutz sensibler Informationen \cite{schober2008}.
-\end{itemize}
-
-\begin{table}[h!]
-\centering
-\caption{Zusammenfassung der funktionalen und nicht-funktionalen Anforderungen}
-\label{tab:anforderungen_uebersicht}
-\begin{tabularx}{\textwidth}{|X|X|}
-\hline
-\textbf{Anforderung}              & \textbf{Beschreibung}                                                                                                   \\\hline
-Visualisierung                   & Interaktive Donut- und Radarcharts zur Darstellung von Gesprächsdaten. \\\hline
-Datenmanagement                  & Strukturierter Import, Speicherung und Bearbeitung von Gesprächsdaten. \\\hline
-Export                           & Erstellung von Berichten im Excel- und PDF-Format. \\\hline
-Benutzerverwaltung               & Differenzierte Zugriffsrechte basierend auf Rollen. \\\hline
-Performance                      & Schnelle Verarbeitung großer Datenmengen. \\\hline
-Skalierbarkeit                   & Erweiterbarkeit bei steigender Nutzer- und Datenanzahl. \\\hline
-Sicherheit                       & Authentifizierung und Verschlüsselung sensibler Daten. \\\hline
-\end{tabularx}
-\end{table}
+Nicht-funktionale Anforderungen konzentrieren sich auf die Qualität des Tools. Die Performance des Systems muss auch bei großen Datenmengen eine schnelle Verarbeitung gewährleisten. Die Skalierbarkeit soll sicherstellen, dass das System mit wachsender Nutzer- und Datenanzahl effizient arbeitet. Zudem ist die Sicherheit durch moderne Authentifizierungs- und Verschlüsselungsmethoden zu gewährleisten, um sensible Informationen zu schützen \cite{schober2008}.
 
 \section{Stakeholder-Interviews und Umfragen}
-\subsection{Methodik}
-Die Bedarfsanalyse wurde durch halbstrukturierte Interviews mit Führungskräften und HR-Managern durchgeführt, um die spezifischen Anforderungen zu erfassen:
-\begin{itemize}
-    \item \textbf{Teilnehmer:} Führungskräfte und HR-Manager aus verschiedenen Abteilungen.
-    \item \textbf{Themen:}
-    \begin{itemize}
-        \item Relevante Daten für Entscheidungsfindungen.
-        \item Herausforderungen bei bestehenden Tools.
-        \item Essenzielle Funktionen für die tägliche Arbeit.
-    \end{itemize}
-    \item \textbf{Auswertung:} Qualitative Analyse der Antworten zur Identifikation zentraler Anforderungen.
-\end{itemize}
+Zur Ermittlung der Anforderungen wurden zwischen März und Mai 2024 halbstrukturierte Interviews mit 15 Führungskräften und HR-Managern aus verschiedenen Abteilungen des Unternehmens durchgeführt. Die Teilnehmenden wurden gezielt ausgewählt, um unterschiedliche Perspektiven und Anforderungen abzudecken, darunter Vertreter aus operativen und strategischen Bereichen. Die Gespräche dauerten durchschnittlich 45 Minuten und umfassten Themen wie relevante Daten für Entscheidungsfindungen, Herausforderungen bestehender Tools und essenzielle Funktionen für die tägliche Arbeit.
+
+Die Antworten wurden qualitativ analysiert, um zentrale Anforderungen und Prioritäten zu identifizieren. Die Ergebnisse zeigten, dass Datensicherheit und benutzerfreundliche Visualisierungen höchste Priorität hatten. Darüber hinaus bestand der Wunsch nach einer dynamischen Benutzeroberfläche mit Echtzeit-Updates.
 
 \subsection{Ergebnisse}
 Die Analyse der Interviews ergab folgende zentrale Anforderungen:
@@ -85,26 +48,11 @@ Die Analyse der Interviews ergab folgende zentrale Anforderungen:
     \caption{Häufigkeit genannter Anforderungen aus Stakeholder-Interviews.}
     \label{fig:stakeholder_results_barchart}
 \end{figure}
-\newpage
 
-\section{Vergleich bestehender Lösungen}
-\subsection{Vergleich von HRworks und Evalea}
-Die bestehenden Tools HRworks und Evalea wurden hinsichtlich ihrer Funktionen analysiert.
+\section{Einordnung bestehender Lösungen}
+Zur Bewertung der vorhandenen Marktsituation wurden die Tools HRworks und Evalea analysiert, die als etablierte Lösungen im HR-Bereich gelten. Beide Systeme bieten spezifische Funktionen zur Unterstützung von HR-Prozessen, weisen jedoch Einschränkungen in der Visualisierung von Daten und der Anpassungsfähigkeit an unternehmensspezifische Anforderungen auf.
 
-\begin{table}[h!]
-\centering
-\caption{Vergleich von HRworks und Evalea}
-\label{tab:vergleich_hrworks_evalea}
-\begin{tabularx}{\textwidth}{|X|X|X|}
-\hline
-\textbf{Kriterium}              & \textbf{HRworks}                                                                 & \textbf{Evalea}                                                                 \\\hline
-Visualisierung                  & Keine spezialisierte Visualisierung.                                            & Umfangreiche Reporting-Funktionen.                                             \\\hline
-Datenmanagement                 & Basis-Stammdatenverwaltung.                                                     & Strukturierte Verwaltung mit erweiterten Reporting-Optionen.                   \\\hline
-Feedback                        & 360°-Feedback-Funktionen.                                                      & Anpassbare Gesprächsleitfäden.                                                 \\\hline
-Benutzerfreundlichkeit          & Intuitive Bedienung.                                                           & Flexible Konfigurationsmöglichkeiten.                                          \\\hline
-Integration                     & Fokus auf allgemeine HR-Prozesse.                                              & Nahtlose Integration in bestehende Systeme.                                    \\\hline
-\end{tabularx}
-\end{table}
+HRworks fokussiert sich auf die allgemeine Verwaltung von HR-Daten und bietet Basisfunktionen wie eine intuitive Benutzeroberfläche und 360°-Feedback-Optionen. Evalea hingegen punktet durch umfangreichere Reporting-Funktionen und anpassbare Gesprächsleitfäden. Beide Tools bieten jedoch keine interaktiven Visualisierungsmöglichkeiten, wie sie für das geplante System vorgesehen sind. Im Vergleich zu den Anforderungen des geplanten Tools wird deutlich, dass insbesondere die Echtzeit-Visualisierung und die tiefergehende Integration in bestehende Systeme fehlen.
 
 \begin{figure}[h!]
     \centering
@@ -143,3 +91,7 @@ Integration                     & Fokus auf allgemeine HR-Prozesse.             
     \caption{Vergleich zwischen HRworks und Evalea in verschiedenen Kategorien.}
     \label{fig:hrworks_evalea_comparison}
 \end{figure}
+
+\section{Zusammenfassung}
+Die Analysephase verdeutlichte, dass das geplante System eine klare Lücke in den bestehenden HR-Tools schließen kann. Die Anforderungen aus den Stakeholder-Interviews sowie die Evaluation bestehender Lösungen bilden die Grundlage für die Entwicklung eines Systems, das durch benutzerfreundliche Visualisierungen, Sicherheit und Skalierbarkeit überzeugt. Dies ermöglicht eine effektive Unterstützung von HR-Abteilungen bei datenbasierten Entscheidungen und der strategischen Planung.
+
